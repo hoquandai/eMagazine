@@ -1362,3 +1362,8 @@ textarea.input {
 	    -ms-transform:translateY(0px);
 	        transform:translateY(0px);
 }
+
+.section-title {
+	display: flex;
+	justify-content: space-between;
+}
