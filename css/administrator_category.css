@@ -1,0 +1,32 @@
+.dropdown-li {
+	border: 0!important;
+	height: 25px;
+}
+
+.dropdown-li a {
+	color: black!important;
+	font-size: 13px;
+	padding: 5px 5px !important;
+}
+
+.dropdown-li a:hover {
+	background-color: black!important;
+	color: white!important;
+}
+
+.dropdown-gray{
+	background-color: gray!important;
+}
+
+button {
+	background-color: white;
+	border: none;
+}
+
+button:hover {
+	color: red;
+}
+
+.article-meta a {
+	margin-right: 10px;
+}
