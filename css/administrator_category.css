@@ -18,15 +18,24 @@
 	background-color: gray!important;
 }
 
-button {
+.article-body button {
 	background-color: white;
 	border: none;
 }
 
 button:hover {
-	color: red;
+	color: red!important;
 }
 
 .article-meta a {
 	margin-right: 10px;
+}
+
+.bg-red {
+	background-color: red;
+	color: white;
+}
+
+.bg-red a:focus {
+	background-color: red!important;
 }
