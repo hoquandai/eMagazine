@@ -42,11 +42,12 @@
 				<div class="container">
 					<div class="header-links">
 						<ul>
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Advertisement</a></li>
-							<li><a href="#">Privacy</a></li>
-							<li><a href="#"><i class="fa fa-sign-in"></i> Login</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							
+							<li><a href="privacy.html">Privacy</a></li>
+							
+							<li class="active"><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>
 						</ul>
 					</div>
 					<div class="header-social">
@@ -68,12 +69,51 @@
 					<div class="header-logo">
 						<a href="#" class="logo"><img src="./img/th16.png" alt="" width="182px" height="274px"></a>
 					</div>
-					<div class="header-ads">
-						<img class="center-block" src="./img/ad-2.jpg" alt=""> 
-					</div>
+					
 				</div>
 			</div>
 			<!-- /Center Header -->
+
+			<!-- Nav Header -->
+			<div id="nav-header">
+				<div class="container">
+					<nav id="main-nav">
+						<div class="nav-logo">
+							<a href="#" class="logo"><img src="./img/logo-alt.png" alt=""></a>
+						</div>
+						<ul class="main-nav nav navbar-nav">
+							<li><a href="index.html">Trang chủ</a></li>
+							<li><a href="news.html">Tin mới</a></li>
+							<li><a href="top.html">Nổi bật</a></li>
+							<li>
+								<a id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								  	Kinh doanh
+								    <span class="fa fa-caret-down"></span>
+								</a>
+
+								 <ul class="dropdown-menu" aria-labelledby="dLabel">
+								    <li class="dropdown-li dropdown-gray"><a href="nongsan.html">Nông sản</a></li>
+								    <li class="dropdown-li "><a href="haisan.html">Hải sản</a></li>
+								</ul>
+							</li>
+							<li><a href="phapluat.html">Pháp luật</a></li>
+							<li><a href="chinhtri.html">Chính trị</a></li>
+							<li><a href="xahoi.html">Xã hội</a></li>
+							<li><a href="giaoduc.html">Giáo dục</a></li>
+						</ul>
+					</nav>
+					<div class="button-nav">
+						<button class="search-collapse-btn"><i class="fa fa-search"></i></button>
+						<button class="nav-collapse-btn"><i class="fa fa-bars"></i></button>
+						<div class="search-form">
+							<form>
+								<input class="input" type="text" name="search" placeholder="Search">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Nav Header -->
 		</header>
 		<!-- /Header -->
 
