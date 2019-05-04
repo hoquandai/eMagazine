@@ -23,6 +23,8 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/administrator_category.css">
+
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,11 +40,11 @@
 				<div class="container">
 					<div class="header-links">
 						<ul>
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Advertisement</a></li>
-							<li><a href="#">Privacy</a></li>
-							<li><a href="#"><i class="fa fa-sign-in"></i> Login</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							
+							<li><a href="privacy.html">Privacy</a></li>
+							<li><a href="login.html"><i class="fa fa-sign-in"></i> Login</a></li>
 						</ul>
 					</div>
 					<div class="header-social">
@@ -62,11 +64,9 @@
 			<div id="center-header">
 				<div class="container">
 					<div class="header-logo">
-						<a href="#" class="logo"><img src="./img/th16.png" alt="" width="182px" height="274px"></a>
+						<a href="index.html" class="logo"><img src="./img/th16.png" alt="" width="182px" height="274px"></a>
 					</div>
-					<div class="header-ads">
-						<img class="center-block" src="./img/ad-2.jpg" alt=""> 
-					</div>
+					
 				</div>
 			</div>
 			<!-- /Center Header -->
@@ -79,10 +79,24 @@
 							<a href="#" class="logo"><img src="./img/logo-alt.png" alt=""></a>
 						</div>
 						<ul class="main-nav nav navbar-nav">
-							<li class="active"><a href="#">Trang chủ</a></li>
-							<li><a href="#">Tin mới</a></li>
-							<li><a href="#">Nổi bật</a></li>
-							<li><a href="#">Kinh doanh</a></li>
+							<li class="active"><a href="index.html">Trang chủ</a></li>
+							<li><a href="news.html">Tin mới</a></li>
+							<li><a href="top.html">Nổi bật</a></li>
+							<li >
+								<a id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								  	Kinh doanh
+								    <span class="fa fa-caret-down"></span>
+								</a>
+
+								 <ul class="dropdown-menu" aria-labelledby="dLabel">
+								    <li class="dropdown-li"><a href="nongsan.html">Nông sản</a></li>
+								    <li class="dropdown-li"><a href="haisan.html">Hải sản</a></li>
+								</ul>
+							</li>
+							<li><a href="phapluat.html">Pháp luật</a></li>
+							<li><a href="chinhtri.html">Chính trị</a></li>
+							<li><a href="xahoi.html">Xã hội</a></li>
+							<li><a href="giaoduc.html">Giáo dục</a></li>
 						</ul>
 					</nav>
 					<div class="button-nav">
@@ -150,7 +164,7 @@
 						<li class="article-category"><a href="#">Nổi bật</a></li>
 						<li class="article-type"><i class="fa fa-camera"></i></li>
 					</ul>
-					<h2 class="article-title"><a href="dev1/d_post3.html">Mở rộng xoài vào thị trường Mỹ</a></h2>
+					<h2 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h2>
 					<ul class="article-meta">
 						<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 						<li><i class="fa fa-comments"></i> 33</li>
@@ -176,7 +190,7 @@
 							<ul class="tab-nav pull-right">
 								<li class="active"><a data-toggle="tab" href="#tab1">All</a></li>
 								<li><a data-toggle="tab" href="#tab2">Nông sản</a></li>
-								<li><a data-toggle="tab" href="#tab1">Hải sản</a></li>
+								<li><a data-toggle="tab" href="#tab3">Hải sản</a></li>
 								
 							</ul>
 							<!-- /tab nav -->
@@ -194,15 +208,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
 													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -218,12 +232,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -239,15 +256,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -263,15 +280,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -289,14 +306,17 @@
 									<!-- Column 1 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -306,14 +326,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -327,14 +350,17 @@
 									<!-- Column 2 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -344,14 +370,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -365,14 +394,17 @@
 									<!-- /Column 3 -->
 									<div class="col-md-4 hidden-sm">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-5.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -382,14 +414,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-6.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -403,9 +438,488 @@
 								<!-- /row -->
 							</div>
 							<!-- /tab1 -->
-							<div id="tab2" class="tab-pane fade in active">
+
+							<!-- tab2 -->
+							<div id="tab2" class="tab-pane fade in">
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- Column 3 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+									
+									<!-- Column 4 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- Column 4 -->
+								</div>
+								<!-- /row -->
 								
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- /Column 3 -->
+									<div class="col-md-4 hidden-sm">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+								</div>
+								<!-- /row -->
 							</div>
+							<!-- /tab2 -->
+
+							<!-- tab3 -->
+							<div id="tab3" class="tab-pane fade in ">
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- Column 3 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+									
+									<!-- Column 4 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- Column 4 -->
+								</div>
+								<!-- /row -->
+								
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- /Column 3 -->
+									<div class="col-md-4 hidden-sm">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+								</div>
+								<!-- /row -->
+							</div>
+							<!-- /tab3 -->
+
+
 						</div>
 						<!-- /tab content -->
 					</div>
@@ -430,9 +944,9 @@
 							<h2 class="title">Mới nhất</h2>
 							<!-- tab nav -->
 							<ul class="tab-nav pull-right">
-								<li class="active"><a data-toggle="tab" href="#tab1">All</a></li>
-								<li><a data-toggle="tab" href="#tab2">Nông sản</a></li>
-								<li><a data-toggle="tab" href="#tab1">Hải sản</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab4">All</a></li>
+								<li><a data-toggle="tab" href="#tab5">Nông sản</a></li>
+								<li><a data-toggle="tab" href="#tab6">Hải sản</a></li>
 								
 							</ul>
 							<!-- /tab nav -->
@@ -441,8 +955,8 @@
 						
 						<!-- Tab content -->
 						<div class="tab-content">
-							<!-- tab1 -->
-							<div id="tab1" class="tab-pane fade in active">
+							<!-- tab4 -->
+							<div id="tab4" class="tab-pane fade in active">
 								<!-- row -->
 								<div class="row">
 									<!-- Column 1 -->
@@ -450,15 +964,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
 													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -474,12 +988,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -495,15 +1012,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -519,15 +1036,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -545,14 +1062,17 @@
 									<!-- Column 1 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -562,14 +1082,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -583,14 +1106,17 @@
 									<!-- Column 2 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -600,14 +1126,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -621,14 +1150,17 @@
 									<!-- /Column 3 -->
 									<div class="col-md-4 hidden-sm">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-5.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -638,14 +1170,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-6.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -658,10 +1193,487 @@
 								</div>
 								<!-- /row -->
 							</div>
-							<!-- /tab1 -->
-							<div id="tab2" class="tab-pane fade in active">
+							<!-- /tab4 -->
+
+							<!-- tab5 -->
+							<div id="tab5" class="tab-pane fade in">
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- Column 3 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+									
+									<!-- Column 4 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- Column 4 -->
+								</div>
+								<!-- /row -->
 								
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- /Column 3 -->
+									<div class="col-md-4 hidden-sm">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+								</div>
+								<!-- /row -->
 							</div>
+							<!-- /tab5 -->
+
+							<!-- tab6 -->
+							<div id="tab6" class="tab-pane fade in">
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- Column 3 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+									
+									<!-- Column 4 -->
+									<div class="col-md-3 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- Column 4 -->
+								</div>
+								<!-- /row -->
+								
+								<!-- row -->
+								<div class="row">
+									<!-- Column 1 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 1 -->
+									
+									<!-- Column 2 -->
+									<div class="col-md-4 col-sm-6">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 2 -->
+									
+									<!-- /Column 3 -->
+									<div class="col-md-4 hidden-sm">
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+										
+										<!-- ARTICLE -->
+										<article class="article  widget-article">
+											<div class="article-img">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
+												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
+											</div>
+											<div class="article-body">
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
+												<ul class="article-meta">
+													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
+													<li><i class="fa fa-comments"></i> 33</li>
+												</ul>
+											</div>
+										</article>
+										<!-- /ARTICLE -->
+									</div>
+									<!-- /Column 3 -->
+								</div>
+								<!-- /row -->
+							</div>
+							<!-- /tab6 -->
 						</div>
 						<!-- /tab content -->
 					</div>
@@ -692,8 +1704,8 @@
 						
 						<!-- Tab content -->
 						<div class="tab-content">
-							<!-- tab1 -->
-							<div id="tab1" class="tab-pane fade in active">
+							<!-- tab -->
+							<div class="tab-pane fade in active">
 								<!-- row -->
 								<div class="row">
 									<!-- Column 1 -->
@@ -701,15 +1713,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
 													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -725,12 +1737,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -746,15 +1761,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -770,15 +1785,15 @@
 										<!-- ARTICLE -->
 										<article class="article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-md-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_small.jpg" alt="">
 												</a>
 												<ul class="article-info">
-													<li class="article-type"><i class="fa fa-file-text"></i></li>
+													<li class="article-type"><i class="fa fa-camera"></i></li>
 												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -796,14 +1811,17 @@
 									<!-- Column 1 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-1.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -813,14 +1831,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-2.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -834,14 +1855,17 @@
 									<!-- Column 2 -->
 									<div class="col-md-4 col-sm-6">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-3.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -851,14 +1875,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-4.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -872,14 +1899,17 @@
 									<!-- /Column 3 -->
 									<div class="col-md-4 hidden-sm">
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-5.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -889,14 +1919,17 @@
 										<!-- /ARTICLE -->
 										
 										<!-- ARTICLE -->
-										<article class="article widget-article">
+										<article class="article  widget-article">
 											<div class="article-img">
-												<a href="#">
-													<img src="./img/img-widget-6.jpg" alt="">
+												<a href="post.html">
+													<img src="./img/top3_thumbnail.jpg" alt="">
 												</a>
+												<ul class="article-info">
+													<li class="article-type"><i class="fa fa-camera"></i></li>
+												</ul>
 											</div>
 											<div class="article-body">
-												<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+												<h4 class="article-title"><a href="post.html">Mở rộng xoài vào thị trường Mỹ</a></h4>
 												<ul class="article-meta">
 													<li><i class="fa fa-clock-o"></i> January 31, 2017</li>
 													<li><i class="fa fa-comments"></i> 33</li>
@@ -909,10 +1942,8 @@
 								</div>
 								<!-- /row -->
 							</div>
-							<!-- /tab1 -->
-							<div id="tab2" class="tab-pane fade in active">
-								
-							</div>
+							<!-- /tab -->
+							
 						</div>
 						<!-- /tab content -->
 					</div>
