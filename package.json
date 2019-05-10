@@ -1,0 +1,26 @@
+{
+  "name": "emagazine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoLegolas/eMagazine.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoLegolas/eMagazine/issues"
+  },
+  "homepage": "https://github.com/HoLegolas/eMagazine#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1"
+  }
+}
