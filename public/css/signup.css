@@ -1,0 +1,14 @@
+.form-main {
+	display: flex;
+	justify-content: center;
+}
+
+.logo-signup {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-center {
+	display: inline;
+	margin: 40%;
+}

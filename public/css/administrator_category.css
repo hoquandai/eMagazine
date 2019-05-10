@@ -23,6 +23,10 @@
 	border: none;
 }
 
+button:hover {
+	color: red;
+}
+
 .article-meta a {
 	margin-right: 10px;
 }
