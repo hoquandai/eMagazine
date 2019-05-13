@@ -46,6 +46,7 @@ app.use('/privacy', require('./routes/info/privacy.route'));
 app.use('/contact', require('./routes/info/contact.route'));
 app.use('/login', require('./routes/info/login.route'));
 app.use('/signup', require('./routes/info/signup.route'));
+app.use('/user_detail', require('./routes/info/user_detail.route'));
 
 /// ADMIN
 app.use('/cate_management', require('./routes/admin/categories.route'));
@@ -53,7 +54,15 @@ app.use('/detail_management', require('./routes/admin/detail.route'));
 app.use('/post_management', require('./routes/admin/posts.route'));
 app.use('/tag_management', require('./routes/admin/tag.route'));
 app.use('/user_management', require('./routes/admin/users.route'));
+app.use('/writer_post', require('./routes/writer/post.route'));
+app.use('/writer_posted', require('./routes/writer/posted.route'));
 
+/// EDITOR
+app.use('/editor', require('./routes/editor/index.route'));
+app.use('/editor_post', require('./routes/editor/post.route'));
+
+/// POST
+app.use('/post', require('./routes/post.route'));
 
 app.listen(3002, () => {
     console.log('server is running at http://localhost:3002');
