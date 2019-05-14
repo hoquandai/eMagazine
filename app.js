@@ -14,6 +14,8 @@ app.engine('hbs', exphbs({
 }));
 
 app.set('view engine', 'hbs');
+app.use(require('./middlewares/locals.categories.mdw'));
+app.use(require('./middlewares/locals.subcategories.mdw'));
 
 app.use(express.static(__dirname + '/public'));
 

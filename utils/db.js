@@ -47,6 +47,41 @@ module.exports = {
                 connection.end();
             })
         });
-    }
-}
+    },
+
+    update: (tableName, idField, entity) => {
+        return new Promise((resolve, reject) => {
+            var id = entity[idFiled];
+            delete entity[idField];
+
+            var sql = `update ${tableName} set ? where ${idField} = ?`;
+            var connection = createConnection();
+            connection.connect();
+            connection.query(sql, [entity, id], (error, value) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(value.changedRows);
+                }
+                connection.end();
+            });
+        });
+    },
+
+    delete: (tableName, idField, id) => {
+        return new Promise((resolve, reject) => {
+            var sql = `delete from ${tableName} where ${idField} = ?`;
+            var connection = createConnection();
+            connection.connect();
+            connection.query(sql, id, (error, value) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve(value.affectedRows);
+                }
+                connection.end();
+            });
+        });
+    },
+};
 

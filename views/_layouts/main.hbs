@@ -81,7 +81,24 @@
 						<a href="#" class="logo"><img src="./img/logo-alt.png" alt=""></a>
 					</div>
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="index.html">Trang chủ</a></li>
+						{{#each lcCategories}}
+						<li>
+							<a id="dLabel" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true"
+								aria-expanded="false">
+								{{name}}
+								<span class="fa fa-caret-down"></span>
+							</a>
+
+							<ul class="dropdown-menu" aria-labelledby="dLabel">
+								{{#each lcSubCategories}}
+									<li class="dropdown-li"><a href="#">{{subname}}</a></li>
+								{{/each}}
+								<!--<li class="dropdown-li"><a href="nongsan.html">Nông sản</a></li>
+								<li class="dropdown-li"><a href="haisan.html">Hải sản</a></li>-->
+							</ul>
+						</li>
+						{{/each}}
+						<!--<li class="active"><a href="index.html">Trang chủ</a></li>
 						<li><a href="news.html">Tin mới</a></li>
 						<li><a href="top.html">Nổi bật</a></li>
 						<li>
@@ -100,6 +117,7 @@
 						<li><a href="chinhtri.html">Chính trị</a></li>
 						<li><a href="xahoi.html">Xã hội</a></li>
 						<li><a href="giaoduc.html">Giáo dục</a></li>
+						-->
 					</ul>
 				</nav>
 				<div class="button-nav">
