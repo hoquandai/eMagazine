@@ -17,7 +17,7 @@ app.set('view engine', 'hbs');
 app.use(require('./middlewares/locals.categories.mdw'));
 app.use(require('./middlewares/locals.subcategories.mdw'));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     var p = categoryModel.all();
@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 /// READER
+app.use('/home', require('./routes/home.route'));
 app.use('/news', require('./routes/reader/news.route'));
 app.use('/chinhtri', require('./routes/reader/chinhtri.route'));
 app.use('/top', require('./routes/reader/top.route'));
@@ -51,13 +52,13 @@ app.use('/signup', require('./routes/info/signup.route'));
 app.use('/user_detail', require('./routes/info/user_detail.route'));
 
 /// ADMIN
-app.use('/cate_management', require('./routes/admin/categories.route'));
-app.use('/detail_management', require('./routes/admin/detail.route'));
-app.use('/post_management', require('./routes/admin/posts.route'));
-app.use('/tag_management', require('./routes/admin/tag.route'));
-app.use('/user_management', require('./routes/admin/users.route'));
-app.use('/writer_post', require('./routes/writer/post.route'));
-app.use('/writer_posted', require('./routes/writer/posted.route'));
+app.use('/admin/cate_management', require('./routes/admin/categories.route'));
+app.use('/admin/detail_management', require('./routes/admin/detail.route'));
+app.use('/admin/post_management', require('./routes/admin/posts.route'));
+app.use('/admin/tag_management', require('./routes/admin/tag.route'));
+app.use('/admin//user_management', require('./routes/admin/users.route'));
+app.use('/admin/writer_post', require('./routes/writer/post.route'));
+app.use('/admin/writer_posted', require('./routes/writer/posted.route'));
 
 /// EDITOR
 app.use('/editor', require('./routes/editor/index.route'));
