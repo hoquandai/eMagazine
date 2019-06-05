@@ -1,5 +1,6 @@
 var express = require('express');
-var categoryModel = require('../../models/category.model')
+var categoryModel = require('../../models/category.model');
+var postModel = require('../../models/post.model');
 var router = express.Router();
 
 
@@ -15,4 +16,22 @@ router.get('/', (req, res) => {
     });
 })
 
+router.post('/', (req, res) => {
+    var entity = {
+        category: req.body.category,
+        title: req.body.title,
+        summary: req.body.summary,
+        content: req.body.content,
+        tag: req.body.tag
+    }
+
+    postModel.add(entity)
+        .then(postid => {
+            console.log(postid);
+            res.render('writer/writer_post');
+        })
+        .catch(err => {
+        console.log(err);
+    })
+})
 module.exports = router;

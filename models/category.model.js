@@ -7,15 +7,9 @@ module.exports = {
 
     allWithDetails: () => {
         return db.load(`
-        select c.id, c.name
+        select c.cateid, c.name, c.subcate1, c.subcate2, c.subcate3, c.subcate4, c.link1, c.link2, c.link3, c.link4, c.link
         from categories c
         `);
-    },
-
-    subcate: id => {
-        return db.load(`
-        select  sc.subid, sc.subname from subcategories sc 
-        where sc.cateid = ${id}`);
     },
 
     single: id => {

@@ -5,8 +5,8 @@ var app = express();
 var categoryModel = require('./models/category.model')
 
 app.use(morgan('dev'));
-app.use(express.urlencoded());
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
@@ -15,7 +15,6 @@ app.engine('hbs', exphbs({
 
 app.set('view engine', 'hbs');
 app.use(require('./middlewares/locals.categories.mdw'));
-app.use(require('./middlewares/locals.subcategories.mdw'));
 
 app.use(express.static('public'));
 
@@ -24,6 +23,7 @@ app.get('/', (req, res) => {
     p.then(rows => {
         console.log(rows);
         res.render('home', {
+            
             categories: rows
         });
     }).catch(err => {
@@ -64,6 +64,9 @@ app.use('/admin/writer_posted', require('./routes/writer/posted.route'));
 app.use('/editor', require('./routes/editor/index.route'));
 app.use('/editor_post', require('./routes/editor/post.route'));
 
+/// WRITER
+app.use('/writer/post', require('./routes/writer/post.route'));
+app.use('/writer/posted', require('./routes/writer/posted.route'));
 /// POST
 app.use('/post', require('./routes/post.route'));
 

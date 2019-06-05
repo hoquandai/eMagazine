@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
     p.then(rows => {
         console.log(rows);
         res.render('reader/chinhtri', {
-            categories: rows
+            categories: rows,
+            active: true
         });
     }).catch(err => {
         console.log(err);

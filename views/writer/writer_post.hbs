@@ -1,35 +1,45 @@
-<form>
-            <div>
-                <label for="title">Tiêu đề</label>
-                <textarea name="title" id="title" rows="2" cols="80" placeholder="Nhập tiêu đề"></textarea>
+<form method="POST">
+    <div class="form-group">
+        <label for="title">Tiêu đề</label>
+        <textarea name="title" id="title" rows="2" cols="80" placeholder="Nhập tiêu đề"></textarea>
 
-                <label for="summary">Tóm tắt</label>
-                <textarea name="summary" id="summary" rows="10" cols="80" placeholder="Nhập nội dung tóm tắt"></textarea>
+        <label for="summary">Tóm tắt</label>
+        <textarea name="summary" id="summary" rows="10" cols="80" placeholder="Nhập nội dung tóm tắt"></textarea>
 
-                <label for="content">Nội dung</label>
-                <textarea name="content" id="content" rows="10" cols="80" placeholder="Nhập nội dung chính bài viết"></textarea>
+        <label for="content">Nội dung</label>
+        <textarea name="content" id="content" rows="10" cols="80" placeholder="Nhập nội dung chính bài viết"></textarea>
 
-                <label for="category">Chuyên mục</label>
-                <textarea name="category" id="category" rows="10" cols="80" placeholder="Nhập chuyên mục bài viết"></textarea>
+        <label for="category">Chuyên mục</label>
+        <select onchange="getValue(this)" id="cateSelecte">
+            <option value="nongsan">Nông sản</option>
+            <option value="haisan">Hải sản</option>
+            <option value="chinhtri">Chính tri</option>
+            <option value="giaoduc">Giáo dục</option>
+        </select>
+        <textarea name="category" id="category" rows="10" cols="80" placeholder="Nhập chuyên mục bài viết"></textarea>
 
-                <label for="tag">Nhãn</label>
-                <textarea name="tag" id="tag" rows="10" cols="80" placeholder="Nhập nhãn bài viết"></textarea>  
+        <label for="tag">Nhãn</label>
+        <textarea name="tag" id="tag" rows="10" cols="80" placeholder="Nhập nhãn bài viết"></textarea>
 
-                <button type="submit" id="submit">Nộp bài viết</button>
-            </div>
+        <button type="submit" class="btn btn-primary">Primary</button>
+    </div>
 
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('title');
+        CKEDITOR.replace('summary');
+        CKEDITOR.replace('content');
+        CKEDITOR.replace('category');
+        CKEDITOR.replace('tag');
+        CKEDITOR.config.height = 150;
+        CKEDITOR.config.extraPlugins = "videoembed";
+        CKEDITOR.config.extraPlugins = "youtube";
 
-           
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace('title');
-                CKEDITOR.replace('summary');
-                CKEDITOR.replace('content');
-                CKEDITOR.replace('category');
-                CKEDITOR.replace('tag');
-                CKEDITOR.config.height = 150;
-                CKEDITOR.config.extraPlugins = "videoembed";
-                CKEDITOR.config.extraPlugins = "youtube";
-            </script>
-        </form>
+        CKEDITOR.instances.category.setReadOnly(true); 
+
+        function getValue(c) {
+            CKEDITOR.instances.category.setData(c.value); 
+        }
+    </script>
+</form>
