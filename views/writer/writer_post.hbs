@@ -35,8 +35,12 @@
         CKEDITOR.config.height = 150;
         CKEDITOR.config.extraPlugins = "videoembed";
         CKEDITOR.config.extraPlugins = "youtube";
-
+        CKEDITOR.config.entities = false;
+        CKEDITOR.config.basicEntities = false;
+        CKEDITOR.config.entities_latin = false;
+        
         CKEDITOR.instances.category.setReadOnly(true); 
+        
 
         function getValue(c) {
             CKEDITOR.instances.category.setData(c.value); 

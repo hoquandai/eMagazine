@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
     postModel.add(entity)
         .then(postid => {
             console.log(postid);
-            res.render('writer/writer_post');
+            res.end('...');
         })
         .catch(err => {
         console.log(err);

@@ -10,7 +10,7 @@ module.exports = {
     },
 
     single: id => {
-        return db.load(`select * from posts where id = ${id}`);
+        return db.load(`select * from posts where postid = ${id}`);
     },
 
     add: entity => {
@@ -18,7 +18,7 @@ module.exports = {
     },
 
     update: entity => {
-        return db.update('posts', 'id', entity);
+        return db.update('posts', 'postid', entity);
     },
 
     delete: id => {
