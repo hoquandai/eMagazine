@@ -1,0 +1,92 @@
+{{#section 'css'}}
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/css/fileinput.min.css">
+{{/section}}
+
+{{#section 'js'}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/js/fileinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.3/themes/fa/theme.min.js"></script>
+<script>
+    $(function() {
+        $('#large').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+        $('#medium').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+        $('#small').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+        $('#post').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+        $('#thumb').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+        $('#widget').fileinput({
+            theme: 'fa',
+            allowedFileExtension: ['jpg']
+        });
+    })
+</script>
+{{/section}}
+
+
+<div class="card shadow">
+    <h4 class="card-header">
+        UPLOAD IMAGES FOR POST
+    </h4>
+    <div class="card-body">
+        <form method="POST">
+            <div class="form-group">
+                <label for="large">Large Image 1200x900</label>
+                <div class="file-loading">
+                    <input type="file" id="large" name="large">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="medium">Medium Image 760x570</label>
+                <div class="file-loading">
+                    <input type="file" id="medium" name="medium">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="small">Small Image 711x400</label>
+                <div class="file-loading">
+                    <input type="file" id="small" name="small">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="post">Post Image 1200x675</label>
+                <div class="file-loading">
+                    <input type="file" id="post" name="post">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="thumb">Thumb Image 600x600</label>
+                <div class="file-loading">
+                    <input type="file" id="thumb" name="thumb">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="widget">Widget Image 160x160</label>
+                <div class="file-loading">
+                    <input type="file" id="widget" name="widget">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fac-check" aria-hidden="true"></i>
+                Submit
+            </button>
+        </form>
+    </div>
+</div>

@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
     postModel.single(id).then(rows => {
         if(rows.length > 0) {
             res.render('post', {
-                post: rows[0]
+                post: rows[0],
             })
         }
     }).catch(err => {

@@ -9,7 +9,7 @@
 						
 						<!-- breadcrumb -->
 						<ul class="article-breadcrumb">
-							<li><a href="/{{{this.post.category}}}">{{{this.post.category}}}</a></li>
+							<li><a href="/{{{this.post.category}}}">{{{this.post.catename}}}</a></li>
 							<li>15 triệu đồng/kg, loài hải sản này có gì hấp dẫn mà ai cũng mong được ăn một lần.</li>
 						</ul>
 						<!-- /breadcrumb -->
@@ -22,11 +22,11 @@
 								<a href="#" class="google"><i class="fa fa-google-plus"></i></a>
 							</div>
 							<div class="article-main-img">
-								<img src="/img/top3.jpg" alt="">
+								<img src="/img/{{{this.post.category}}}/{{{this.post.postid}}}/{{{this.post.postid}}}-post.jpg" alt="">
 							</div>
 							<div class="article-body">
 								<ul class="article-info">
-									<li class="article-category"><a href="#">Nổi bật</a></li>
+									<li class="article-category"><a href="/{{{this.post.category}}}">{{{this.post.catename}}}</a></li>
 									<li class="article-type"><i class="fa fa-file-text"></i></li>
 								</ul>
 								
@@ -45,10 +45,17 @@
 						<!-- widget tags -->
 						<div class="widget-tags">
 							<ul>
-								<li><a href="#">Tin mới</a></li>
-								<li><a href="#">Nổi bật</a></li>
-								<li><a href="#">Nông sản</a></li>
-								<li><a href="#">Hải sản</a></li>
+								<li><a href="/news">Tin mới</a></li>
+								<li><a href="/top">Nổi bật</a></li>
+								{{#if this.post.tag1}}
+								<li><a href="#">{{this.post.tag1}}</a></li>
+								{{/if}}
+								{{#if this.post.tag2}}
+								<li><a href="#">{{this.post.tag2}}</a></li>
+								{{/if}}
+								{{#if this.post.tag3}}
+								<li><a href="#">{{this.post.tag3}}</a></li>
+								{{/if}}
 							</ul>
 						</div>
 						<!-- /widget tags -->

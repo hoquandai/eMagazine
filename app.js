@@ -1,5 +1,6 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+var hbs_sections = require('express-handlebars-sections')
 var morgan = require('morgan');
 var app = express();
 var categoryModel = require('./models/category.model')
@@ -11,6 +12,9 @@ app.use(express.urlencoded());
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
     layoutsDir: 'views/_layouts',
+    helpers: {
+        section: hbs_sections()
+    }
 }));
 
 app.set('view engine', 'hbs');
@@ -67,6 +71,7 @@ app.use('/editor_post', require('./routes/editor/post.route'));
 /// WRITER
 app.use('/writer/post', require('./routes/writer/post.route'));
 app.use('/writer/posted', require('./routes/writer/posted.route'));
+app.use('/writer/upload', require('./routes/writer/upload.route'));
 /// POST
 app.use('/post', require('./routes/post.route'));
 

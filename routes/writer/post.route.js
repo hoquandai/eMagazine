@@ -22,7 +22,10 @@ router.post('/', (req, res) => {
         title: req.body.title,
         summary: req.body.summary,
         content: req.body.content,
-        tag: req.body.tag
+        tag1: req.body.tag1,
+        tag2: req.body.tag2,
+        tag3: req.body.tag3,
+        catename: req.body.catename
     }
 
     postModel.add(entity)
