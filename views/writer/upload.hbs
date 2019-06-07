@@ -9,27 +9,44 @@
     $(function() {
         $('#large').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+            uploadUrl: `/upload/large/{{{this.cate}}}/{{{this.postid}}}/large`,
+            uploadAsync: false
         });
         $('#medium').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+            
+            uploadUrl: `/upload/medium/{{{this.cate}}}/{{{this.postid}}}/medium`,
+            uploadAsync: false
         });
         $('#small').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+            
+            uploadUrl: `/upload/small/{{{this.cate}}}/{{this.postid}}/small`,
+            uploadAsync: false
         });
         $('#post').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+            
+            uploadUrl: `/upload/post/{{{this.cate}}}/{{{this.postid}}}/post`,
+            uploadAsync: false
         });
         $('#thumb').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+           
+            uploadUrl: `/upload/thumb/{{{this.cate}}}/{{{this.postid}}}/thumb`,
+            uploadAsync: false
         });
         $('#widget').fileinput({
             theme: 'fa',
-            allowedFileExtension: ['jpg']
+            allowedFileExtensions: ['jpg'],
+            
+            uploadUrl: `/upload/widget/{{{this.cate}}}/{{{this.postid}}}/widget`,
+            uploadAsync: false
         });
     })
 </script>

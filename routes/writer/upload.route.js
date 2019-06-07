@@ -14,6 +14,15 @@ router.get('/', (req, res) => {
     }).catch(err => {
         console.log(err);
     });
-})
+});
 
+router.get('/:cate/:id', (req, res) => {
+    var id = req.params.id;
+    var cate = req.params.cate;
+    console.log(cate + id);
+    res.render('writer/upload', {
+        cate: cate,
+        postid: id
+    });
+});
 module.exports = router;

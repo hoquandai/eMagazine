@@ -31,7 +31,12 @@ router.post('/', (req, res) => {
     postModel.add(entity)
         .then(postid => {
             console.log(postid);
-            res.end('...');
+            var cate = req.body.category;
+
+            res.render(`writer/upload`,{
+                cate: cate,
+                postid: postid
+            });
         })
         .catch(err => {
         console.log(err);
