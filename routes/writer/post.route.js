@@ -2,7 +2,7 @@ var express = require('express');
 var categoryModel = require('../../models/category.model');
 var postModel = require('../../models/post.model');
 var router = express.Router();
-
+var fs = require('fs');
 
 router.get('/', (req, res) => {
     var p = categoryModel.all();
@@ -25,14 +25,14 @@ router.post('/', (req, res) => {
         tag1: req.body.tag1,
         tag2: req.body.tag2,
         tag3: req.body.tag3,
-        catename: req.body.catename
+        catename: req.body.catename,
+        date: req.body.date
     }
 
     postModel.add(entity)
         .then(postid => {
             console.log(postid);
-            var cate = req.body.category;
-
+            var cate = req.body.category; 
             res.render(`writer/upload`,{
                 cate: cate,
                 postid: postid

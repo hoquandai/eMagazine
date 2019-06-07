@@ -85,6 +85,7 @@
 					</div>
 					<ul class="main-nav nav navbar-nav">
 						{{#each lcCategories}}
+						{{#if subcate1}}
 						<li class="{{#if active}}active{{/if}}">
 							<a id="dLabel" data-target="#" href={{link}} data-toggle="dropdown" role="button" aria-haspopup="true"
 								aria-expanded="false">
@@ -92,6 +93,7 @@
 								<span class="fa fa-caret-down"></span>
 							</a>
 
+							
 							<ul class="dropdown-menu" aria-labelledby="dLabel">
 								{{#if subcate1}}
 								<li class="dropdown-li active"><a href={{link1}}>{{subcate1}}</a></li>
@@ -105,13 +107,19 @@
 								{{#if subcate4}}
 								<li class="dropdown-li"><a href={{link4}}>{{subcate4}}</a></li>
 								{{/if}}
-								{{#if link}}
+
+								{{#if subcate1}}
+								<li></li>
+								{{else}}
 								<li class="dropdown-li"><a href={{link}}>{{name}}</a></li>
 								{{/if}}
 								<!--<li class="dropdown-li"><a href="nongsan.html">Nông sản</a></li>
 								<li class="dropdown-li"><a href="haisan.html">Hải sản</a></li>-->
 							</ul>
 						</li>
+						{{else}}
+							<li><a href={{link}}>{{name}}</a></li>
+						{{/if}}
 						{{/each}}
 						<!--<li class="active"><a href="index.html">Trang chủ</a></li>
 						<li><a href="news.html">Tin mới</a></li>
@@ -163,10 +171,9 @@
 					<!-- footer links -->
 					<div class="col-md-6 col-md-push-6">
 						<ul class="footer-links">
-							<li><a href="#">About us</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Advertisement</a></li>
-							<li><a href="#">Privacy</a></li>
+							<li><a href="/about">About us</a></li>
+							<li><a href="/contact">Contact</a></li>
+							<li><a href="/privacy">Privacy</a></li>
 						</ul>
 					</div>
 					<!-- /footer links -->
