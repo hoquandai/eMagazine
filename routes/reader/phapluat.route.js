@@ -3,7 +3,7 @@ var categoryModel = require('../../models/category.model')
 var router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
@@ -11,9 +11,7 @@ router.get('/', (req, res) => {
             categories: rows,
             active: true,
         });
-    }).catch(err => {
-        console.log(err);
-    });
+    }).catch(next);
 })
 
 module.exports = router;

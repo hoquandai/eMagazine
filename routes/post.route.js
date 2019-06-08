@@ -4,31 +4,25 @@ var postModel = require('../models/post.model');
 var router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
         res.render('post', {
             categories: rows
         });
-    }).catch(err => {
-        console.log(err);
-        res.end('error occured')
-    });
+    }).catch(next);
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
     var id = req.params.id;
     postModel.single(id).then(rows => {
         if(rows.length > 0) {
             res.render('post', {
                 post: rows[0],
-            })
+            });
         }
-    }).catch(err => {
-        console.log(err);
-        res.end('error occured');
-    }) 
+    }).catch(next);
 });
 
 module.exports = router;

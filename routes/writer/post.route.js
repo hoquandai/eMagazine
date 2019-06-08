@@ -4,19 +4,17 @@ var postModel = require('../../models/post.model');
 var router = express.Router();
 var fs = require('fs');
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
         res.render('writer/writer_post', {
             categories: rows
         });
-    }).catch(err => {
-        console.log(err);
-    });
+    }).catch(next);
 })
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
     var entity = {
         category: req.body.category,
         title: req.body.title,
@@ -38,8 +36,6 @@ router.post('/', (req, res) => {
                 postid: postid
             });
         })
-        .catch(err => {
-        console.log(err);
-    })
+        .catch(next);
 })
 module.exports = router;

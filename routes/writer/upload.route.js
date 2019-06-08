@@ -4,16 +4,14 @@ var postModel = require('../../models/post.model');
 var router = express.Router();
 
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     var p = postModel.all();
     p.then(rows => {
         console.log(rows);
         res.render('writer/upload', {
             posts: rows
         });
-    }).catch(err => {
-        console.log(err);
-    });
+    }).catch(next);
 });
 
 router.get('/:cate/:id', (req, res) => {

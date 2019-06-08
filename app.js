@@ -76,6 +76,20 @@ app.use('/writer/upload', require('./routes/writer/upload.route'));
 /// POST
 app.use('/post', require('./routes/post.route'));
 
+// ERROR
+app.use((req, res, next) => {
+    res.render('404', { 
+        layout: false 
+    });
+})
+
+app.use((error, req, res, next) => {
+    res.render('error', {
+        layout: false,
+        message: error.message,
+        error
+    });
+})
 app.listen(3002, () => {
     console.log('server is running at http://localhost:3002');
 })
