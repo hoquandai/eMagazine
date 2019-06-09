@@ -1,29 +1,34 @@
 var express = require('express');
 var exphbs  = require('express-handlebars');
+var hbs_sections = require('express-handlebars-sections')
 var morgan = require('morgan');
 var app = express();
 var categoryModel = require('./models/category.model')
 
 app.use(morgan('dev'));
-app.use(express.urlencoded());
 app.use(express.json());
+app.use(express.urlencoded());
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
     layoutsDir: 'views/_layouts',
+    helpers: {
+        section: hbs_sections()
+    }
 }));
 
 app.set('view engine', 'hbs');
 app.use(require('./middlewares/locals.categories.mdw'));
-app.use(require('./middlewares/locals.subcategories.mdw'));
 
 app.use(express.static('public'));
+require('./middlewares/upload')(app);
 
 app.get('/', (req, res) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
         res.render('home', {
+            
             categories: rows
         });
     }).catch(err => {
@@ -64,9 +69,27 @@ app.use('/admin/writer_posted', require('./routes/writer/posted.route'));
 app.use('/editor', require('./routes/editor/index.route'));
 app.use('/editor_post', require('./routes/editor/post.route'));
 
+/// WRITER
+app.use('/writer/post', require('./routes/writer/post.route'));
+app.use('/writer/posted', require('./routes/writer/posted.route'));
+app.use('/writer/upload', require('./routes/writer/upload.route'));
 /// POST
 app.use('/post', require('./routes/post.route'));
 
+// ERROR
+app.use((req, res, next) => {
+    res.render('404', { 
+        layout: false 
+    });
+})
+
+app.use((error, req, res, next) => {
+    res.render('error', {
+        layout: false,
+        message: error.message,
+        error
+    });
+})
 app.listen(3002, () => {
     console.log('server is running at http://localhost:3002');
 })

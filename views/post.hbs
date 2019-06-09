@@ -6,11 +6,10 @@
 				<div class="row">
 					<!-- Main Column -->
 					<div class="col-md-8">
-
+						
 						<!-- breadcrumb -->
 						<ul class="article-breadcrumb">
-							<li><a href="#">Trang chủ</a></li>
-							<li><a href="#">Nổi bật</a></li>
+							<li><a href="/{{{this.post.category}}}">{{{this.post.catename}}}</a></li>
 							<li>15 triệu đồng/kg, loài hải sản này có gì hấp dẫn mà ai cũng mong được ăn một lần.</li>
 						</ul>
 						<!-- /breadcrumb -->
@@ -23,25 +22,21 @@
 								<a href="#" class="google"><i class="fa fa-google-plus"></i></a>
 							</div>
 							<div class="article-main-img">
-								<img src="./img/top3.jpg" alt="">
+								<img src="/img/{{{this.post.category}}}/{{{this.post.postid}}}/{{{this.post.postid}}}-post.jpg" alt="">
 							</div>
 							<div class="article-body">
 								<ul class="article-info">
-									<li class="article-category"><a href="#">Nổi bật</a></li>
+									<li class="article-category"><a href="/{{{this.post.category}}}">{{{this.post.catename}}}</a></li>
 									<li class="article-type"><i class="fa fa-file-text"></i></li>
 								</ul>
-								<h1 class="article-title">Mở rộng xoài vào thị trường Mỹ</h1>
+								
+								{{{this.post.title}}}
 								<ul class="article-meta">
 									<li><i class="fa fa-clock-o"></i> April 04, 2017</li>
 									<li><i class="fa fa-comments"></i> 33</li>
 								</ul>
-								<p>Xoài sẽ là loại trái cây thứ 6 của Việt Nam được Mỹ cho phép nhập khẩu vào tiêu thụ. Đây là một tin vui đối với nông dân Việt Nam nói chung và người trồng xoài khắp cả nước nói riêng, nhất là người trồng xoài Khánh Hòa.
-								</p>
-								<p>Tháng 2/2018, UBND tỉnh Khánh Hòa ban hành Kế hoạch cơ cấu lại ngành nông nghiệp giai đoạn 2018 - 2020; trong đó, xác định cây xoài là một trong những cây trồng chủ lực của địa phương, với hai loại giống Australia và Cát Hòa Lộc.</p>
-								<p>ETỉnh Khánh Hòa cũng định hướng sẽ tiếp tục tăng diện tích trồng xoài từ khoảng 8.800 ha hiện nay lên hơn 10.000 ha vào năm 2020. Để phát triển cây xoài, ngoài việc tiếp tục trồng bằng hình thức thâm canh, cho ra quả trái vụ…, loại cây này cần phải áp dụng các quy trình nông nghiệp an toàn theo chuẩn GAP.</p>
-								<p>Cụ thể, năm nay xoài Australia loại 1 giá 35.000 đồng/kg, loại 2 giá 20.000 đồng/kg; xoài Đài Loan loại 1 giá 15.000 đồng/kg, loại 2 giá 10.000 đồng/kg. Giá xoài giảm nhiều so với cùng kỳ năm trước đó, nguyên nhân do xoài ở Đồng Nai, TP Hồ Chí Minh cũng đang rộ, cộng thêm việc các nước Thái Lan và Campuchia cũng xuất sang thị trường Trung Quốc.</p>
-								<p><em>"Thời gian tới, chi cục tiếp tục tiến hành các chương trình lồng ghép tuyên truyền trong các buổi, lớp tập huấn cho nông dân về những thông tin cần thiết như: điều kiện, yêu cầu, quy trình,  thủ tục đăng ký cấp mã số vùng trồng… để nâng cao nhận thức của người nông dân, tiến tới việc đưa trái xoài Khánh Hòa sang thị trường Mỹ", bà Ngân cho biết thêm.</em></p>
-								<p>Đứng trước cơ hội có thể tiếp cận thị trường cao cấp Mỹ với các yêu cầu về chất lượng, nguồn gốc, xoài Khánh Hòa cần phải được nông dân, doanh nghiệp và nhà nước chung tay cùng hỗ trợ nhau phát triển, đảm bảo đạt yêu cầu theo các quy định nghiêm ngặt của Mỹ</p>
+								
+								{{{this.post.content}}}
 								
 							</div>
 						</article>
@@ -50,10 +45,17 @@
 						<!-- widget tags -->
 						<div class="widget-tags">
 							<ul>
-								<li><a href="#">Tin mới</a></li>
-								<li><a href="#">Nổi bật</a></li>
-								<li><a href="#">Nông sản</a></li>
-								<li><a href="#">Hải sản</a></li>
+								<li><a href="/news">Tin mới</a></li>
+								<li><a href="/top">Nổi bật</a></li>
+								{{#if this.post.tag1}}
+								<li><a href="#">{{this.post.tag1}}</a></li>
+								{{/if}}
+								{{#if this.post.tag2}}
+								<li><a href="#">{{this.post.tag2}}</a></li>
+								{{/if}}
+								{{#if this.post.tag3}}
+								<li><a href="#">{{this.post.tag3}}</a></li>
+								{{/if}}
 							</ul>
 						</div>
 						<!-- /widget tags -->
@@ -67,7 +69,7 @@
 							<!-- comment -->
 							<div class="media">
 								<div class="media-left">
-									<img src="./img/av-1.jpg" alt="">
+									<img src="/img/av-1.jpg" alt="">
 								</div>
 								<div class="media-body">
 									<div class="media-heading">
@@ -80,7 +82,7 @@
 								<!-- comment -->
 								<div class="media">
 									<div class="media-left">
-										<img src="./img/av-2.jpg" alt="">
+										<img src="/img/av-2.jpg" alt="">
 									</div>
 									<div class="media-body">
 										<div class="media-heading">
@@ -93,7 +95,7 @@
 									<!-- comment -->
 									<div class="media">
 										<div class="media-left">
-											<img src="./img/av-1.jpg" alt="">
+											<img src="/img/av-1.jpg" alt="">
 										</div>
 										<div class="media-body">
 											<div class="media-heading">
@@ -112,7 +114,7 @@
 							<!-- comment -->
 							<div class="media">
 								<div class="media-left">
-									<img src="./img/av-2.jpg" alt="">
+									<img src="/img/av-2.jpg" alt="">
 								</div>
 								<div class="media-body">
 									<div class="media-heading">
@@ -148,7 +150,7 @@
 					<div class="col-md-4">
 						<!-- Ad widget -->
 						<div class="widget center-block hidden-xs">
-							<img class="center-block" src="./img/ad-1.jpg" alt=""> 
+							<img class="center-block" src="/img/ad-1.jpg" alt=""> 
 						</div>
 						<!-- /Ad widget -->
 						
@@ -192,7 +194,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-3.jpg" alt="">
+											<img src="/img/img-md-3.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-file-text"></i></li>
@@ -212,7 +214,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-4.jpg" alt="">
+											<img src="/img/img-md-4.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-file-text"></i></li>
@@ -234,7 +236,7 @@
 							<article class="article widget-article">
 								<div class="article-img">
 									<a href="#">
-										<img src="./img/img-widget-1.jpg" alt="">
+										<img src="/img/img-widget-1.jpg" alt="">
 									</a>
 								</div>
 								<div class="article-body">
@@ -251,7 +253,7 @@
 							<article class="article widget-article">
 								<div class="article-img">
 									<a href="#">
-										<img src="./img/img-widget-2.jpg" alt="">
+										<img src="/img/img-widget-2.jpg" alt="">
 									</a>
 								</div>
 								<div class="article-body">
@@ -268,7 +270,7 @@
 							<article class="article widget-article">
 								<div class="article-img">
 									<a href="#">
-										<img src="./img/img-widget-3.jpg" alt="">
+										<img src="/img/img-widget-3.jpg" alt="">
 									</a>
 								</div>
 								<div class="article-body">
@@ -294,7 +296,7 @@
 								<!-- ARTICLE -->
 								<article class="article thumb-article">
 									<div class="article-img">
-										<img src="./img/img-thumb-1.jpg" alt="">
+										<img src="/img/img-thumb-1.jpg" alt="">
 									</div>
 									<div class="article-body">
 										<ul class="article-info">
@@ -313,7 +315,7 @@
 								<!-- ARTICLE -->
 								<article class="article thumb-article">
 									<div class="article-img">
-										<img src="./img/img-thumb-2.jpg" alt="">
+										<img src="/img/img-thumb-2.jpg" alt="">
 									</div>
 									<div class="article-body">
 										<ul class="article-info">
@@ -343,7 +345,7 @@
 		
 		<!-- AD SECTION -->
 		<div class="visible-lg visible-md">
-			<img class="center-block" src="./img/ad-3.jpg" alt="">
+			<img class="center-block" src="/img/ad-3.jpg" alt="">
 		</div>
 		<!-- /AD SECTION -->
 		
@@ -369,7 +371,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-1.jpg" alt="">
+											<img src="/img/img-md-1.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>
@@ -393,7 +395,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-2.jpg" alt="">
+											<img src="/img/img-md-2.jpg" alt="">
 										</a>
 									</div>
 									<div class="article-body">
@@ -414,7 +416,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-3.jpg" alt="">
+											<img src="/img/img-md-3.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-file-text"></i></li>
@@ -438,7 +440,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-4.jpg" alt="">
+											<img src="/img/img-md-4.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-file-text"></i></li>
@@ -462,7 +464,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-1.jpg" alt="">
+											<img src="/img/img-md-1.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>
@@ -486,7 +488,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-1.jpg" alt="">
+											<img src="/img/img-md-1.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>
@@ -510,7 +512,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-1.jpg" alt="">
+											<img src="/img/img-md-1.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>
@@ -534,7 +536,7 @@
 								<article class="article">
 									<div class="article-img">
 										<a href="#">
-											<img src="./img/img-md-1.jpg" alt="">
+											<img src="/img/img-md-1.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>

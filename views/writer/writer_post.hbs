@@ -1,35 +1,93 @@
-<form>
-            <div>
-                <label for="title">Tiêu đề</label>
-                <textarea name="title" id="title" rows="2" cols="80" placeholder="Nhập tiêu đề"></textarea>
+<form method="POST">
+    <div class="form-group">
+        <label for="title">Ngày đăng</label>
+        <textarea class="form-control" name="date" id="date" rows="2" cols="80" readonly></textarea>
+    </div>
+    <div class="form-group">
+        <label for="title">Tiêu đề</label>
+        <textarea class="form-control" name="title" id="title" rows="2" cols="80" placeholder="Nhập tiêu đề"></textarea>
+    </div>
 
-                <label for="summary">Tóm tắt</label>
-                <textarea name="summary" id="summary" rows="10" cols="80" placeholder="Nhập nội dung tóm tắt"></textarea>
+    <div class="form-group">
+        <label for="summary">Tóm tắt</label>
+        <textarea class="form-control" name="summary" id="summary" rows="10" cols="80"
+            placeholder="Nhập nội dung tóm tắt"></textarea>
+    </div>
 
-                <label for="content">Nội dung</label>
-                <textarea name="content" id="content" rows="10" cols="80" placeholder="Nhập nội dung chính bài viết"></textarea>
+    <div class="form-group">
+        <label for="content">Nội dung</label>
+        <textarea class="form-control" name="content" id="content" rows="10" cols="80"
+            placeholder="Nhập nội dung chính bài viết"></textarea>
+    </div>
 
-                <label for="category">Chuyên mục</label>
-                <textarea name="category" id="category" rows="10" cols="80" placeholder="Nhập chuyên mục bài viết"></textarea>
+    <div class="form-group">
+        <label for="category">Chuyên mục</label>
+        <select class="form-control" onchange="getValue(this);" id="categorySelect">
+            <option value="nongsan" selected>Nông sản</option>
+            <option value="haisan">Hải sản</option>
+            <option value="chinhtri">Chính tri</option>
+            <option value="giaoduc">Giáo dục</option>
+        </select>
+        <textarea class="form-control" name="category" id="category" rows="1" cols="80" readonly>nongsan</textarea>
+        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80" readonly>Nông sản</textarea>
+    </div>
 
-                <label for="tag">Nhãn</label>
-                <textarea name="tag" id="tag" rows="10" cols="80" placeholder="Nhập nhãn bài viết"></textarea>  
+    <div class="form-group">
+        <label for="tag1">Nhãn 1</label>
+        <textarea class="form-control" name="tag1" id="tag1" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết"></textarea>
+    </div>
 
-                <button type="submit" id="submit">Nộp bài viết</button>
-            </div>
+    <div class="form-group">
+        <label for="tag2">Nhãn 2</label>
+        <textarea class="form-control" name="tag2" id="tag2" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="tag3">Nhãn 3</label>
+        <textarea class="form-control" name="tag3" id="tag3" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết"></textarea>
+    </div>
 
 
-           
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace('title');
-                CKEDITOR.replace('summary');
-                CKEDITOR.replace('content');
-                CKEDITOR.replace('category');
-                CKEDITOR.replace('tag');
-                CKEDITOR.config.height = 150;
-                CKEDITOR.config.extraPlugins = "videoembed";
-                CKEDITOR.config.extraPlugins = "youtube";
-            </script>
-        </form>
+    <button type="submit" class="btn btn-primary">Primary</button>
+    </div>
+
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('title');
+        CKEDITOR.replace('summary');
+        CKEDITOR.replace('content');
+
+        CKEDITOR.config.height = 150;
+        CKEDITOR.config.extraPlugins = "videoembed";
+        CKEDITOR.config.extraPlugins = "youtube";
+        CKEDITOR.config.entities = false;
+        CKEDITOR.config.basicEntities = false;
+        CKEDITOR.config.entities_latin = false;
+
+        CKEDITOR.instances.category.setReadOnly(true);
+
+
+        function getValue(c) {
+            document.getElementById('category').value = c.value;
+            document.getElementById('catename').value = c.options[c.selectedIndex].text;
+
+            loadDate();
+            
+            //c.options[c.selectedIndex].text
+        }
+
+        function loadDate() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('date').value = today;
+        }
+    </script>
+</form>
