@@ -17,7 +17,9 @@ router.get('/is-available', (req, res, next) => {
 });
 
 router.get('/', (req, res, next) => {
-    res.render('info/signup', {layout: false});
+    res.render('info/signup', {
+        layout: false
+    })
 });
 
 router.post('/', (req, res, next) => {
