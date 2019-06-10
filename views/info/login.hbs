@@ -1,46 +1,92 @@
-	<!-- SECTION -->
-		<div class="section section1">
-			<!-- CONTAINER -->
-			<div class="container">
-				<div class="logo-login">
-					<h3>Đăng nhập</h3>
-				</div>
-				<form class="form-horizontal">
-  					<div class="form-group form-group1">
-				    	<div class="col-sm-4">
-				    		<input type="email" class="form-control form-control1" id="inputEmail3" placeholder="Email">
-				    		<input type="password" class="form-control" id="inputPassword3" placeholder="Mật khẩu">
-				    	</div>
-				  	</div>
-				  	<div class="form-group">
-				    	<div class="col-sm-offset-4 col-sm-10">
-				      		<div class="checkbox">
-				        		<label>
-				          			<input type="checkbox"> Ghi nhớ đăng nhập
-				        		</label>
-				      		</div>
-				    	</div>
-				  	</div>
-				  	<div class="form-group">
-				    	<div class="col-sm-offset-4 col-sm-10">
-				      		<button type="submit" class="btn btn-primary">Đăng nhập</button>
-				    	</div>
-				  	</div>
-				</form>
-				<div class="col-sm-offset-4 col-sm-10 fix-col">
-					<div>
-						<a href="#"><i>Quên mật khẩu?</i></a>
-					</div>
-					<div class="col-sign-in">
-						<i>Đăng nhập với: </i>
-						<a href="#"><i class="fa fa-facebook fa1"></i></a>
-						<a href="#"><i class="fa fa-google"></i></a>
-					</div>
-				</div>
-				<div class="col-sm-offset-4 col-sm-10 col-sign-up">
-					<i>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay</a></i>
-				</div>
-			</div>
-			<!-- /CONTAINER -->
-		</div>
-		<!-- /SECTION -->
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/css/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="/img/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="/signup" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign in</h2>
+                        {{#if err_message}}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{err_message}}
+                        </div>
+                        {{/if}}
+                        <form method="POST" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="your_name" placeholder="Your username" />
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="Password" />
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember
+                                    me</label>
+                            </div>
+                            <div class="form-group d-flex">
+                                {{!-- <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" /> --}}
+
+                                <div>
+                                    <a class="btn btn-lg btn-outline-info btn-block" href="/" role="button">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        Home
+                                    </a>
+                                </div>
+                                <div class="flex-fill ml-1">
+                                    <button class="btn btn-info btn-lg btn-block" type="submit">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        Sign In
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

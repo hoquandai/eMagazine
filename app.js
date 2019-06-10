@@ -22,6 +22,8 @@ app.use(require('./middlewares/locals.categories.mdw'));
 
 app.use(express.static('public'));
 require('./middlewares/upload')(app);
+require('./middlewares/passport')(app);
+require('./middlewares/session')(app);
 
 app.get('/', (req, res) => {
     var p = categoryModel.all();
