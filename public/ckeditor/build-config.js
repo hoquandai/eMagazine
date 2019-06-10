@@ -32,7 +32,7 @@ var CKBUILDER_CONFIG = {
 		'.bender',
 		'.editorconfig',
 		'.gitattributes',
-		'.gitignore',
+		
 		'.idea',
 		'.jscsrc',
 		'.jshintignore',
