@@ -11,7 +11,7 @@
  Target Server Version : 50718
  File Encoding         : 65001
 
- Date: 14/06/2019 20:06:58
+ Date: 14/06/2019 21:26:00
 */
 
 SET NAMES utf8mb4;
@@ -46,6 +46,24 @@ INSERT INTO `categories` VALUES (4, 'Xã hội', NULL, NULL, NULL, NULL, NULL, N
 INSERT INTO `categories` VALUES (5, 'Giáo dục', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/reader/category/giaoduc');
 INSERT INTO `categories` VALUES (6, 'News', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/news');
 INSERT INTO `categories` VALUES (7, 'Top', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '/top');
+
+-- ----------------------------
+-- Table structure for catenames
+-- ----------------------------
+DROP TABLE IF EXISTS `catenames`;
+CREATE TABLE `catenames`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `catename` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of catenames
+-- ----------------------------
+INSERT INTO `catenames` VALUES (1, '/reader/category/nongsan');
+INSERT INTO `catenames` VALUES (2, '/reader/category/haisan');
+INSERT INTO `catenames` VALUES (3, '/reader/category/giaoduc');
+INSERT INTO `catenames` VALUES (4, '/reader/category/chinhtri');
 
 -- ----------------------------
 -- Table structure for posts
