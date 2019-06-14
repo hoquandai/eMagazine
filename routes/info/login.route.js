@@ -1,13 +1,14 @@
 var express = require('express');
 var passport = require('passport');
+var auth = require('../../middlewares/auth');
 
 var router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.get('/login', (req, res, next) => {
     res.render('info/login', {layout: false});
 })
 
-router.post('/', (req, res, next) => {
+router.post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if (err) { 
             return next(err); 
@@ -25,9 +26,20 @@ router.post('/', (req, res, next) => {
                 return next(err);
             }
 
+            console.log(user);
+            req.session.user = user.username;
+
+            req.session.save(function(err) {
+                console.log("SESSION: " + req.session.user);
+            })
+
             return res.redirect('/');
         })
     })(req, res, next);
+})
+
+router.get('/profile', auth, (req, res, next) => {
+    res.end('hello');
 })
 
 module.exports = router;

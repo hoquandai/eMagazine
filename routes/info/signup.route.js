@@ -16,13 +16,13 @@ router.get('/is-available', (req, res, next) => {
     })
 });
 
-router.get('/', (req, res, next) => {
+router.get('/signup', (req, res, next) => {
     res.render('info/signup', {
         layout: false
     })
 });
 
-router.post('/', (req, res, next) => {
+router.post('/signup', (req, res, next) => {
     var saltRounds = 10;
     var hash = bcrypt.hashSync(req.body.password, saltRounds);
     var dob = moment(req.body.dob, 'DD/MM/YYYY').format('YYYY-MM-DD');
@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
     };
 
     userModel.add(entity).then(id => {
-        res.redirect('/login');
+        res.redirect('/account/login');
     })
 });
 

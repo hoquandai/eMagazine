@@ -4,10 +4,12 @@ var hbs_sections = require('express-handlebars-sections')
 var morgan = require('morgan');
 var app = express();
 var categoryModel = require('./models/category.model')
+var cookieParser = require('cookie-parser');
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser('sleepydog'));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
@@ -21,9 +23,9 @@ app.set('view engine', 'hbs');
 app.use(require('./middlewares/locals.categories.mdw'));
 
 app.use(express.static('public'));
-require('./middlewares/upload')(app);
 require('./middlewares/passport')(app);
 require('./middlewares/session')(app);
+require('./middlewares/upload')(app);
 
 app.get('/', (req, res) => {
     var p = categoryModel.all();
@@ -54,9 +56,11 @@ app.use('/subscriber', require('./routes/subscriber/index.route'));
 app.use('/about', require('./routes/info/about.route'));
 app.use('/privacy', require('./routes/info/privacy.route'));
 app.use('/contact', require('./routes/info/contact.route'));
-app.use('/login', require('./routes/info/login.route'));
-app.use('/signup', require('./routes/info/signup.route'));
+app.use('/account', require('./routes/info/login.route'));
+app.use('/', require('./routes/info/signup.route'));
 app.use('/user_detail', require('./routes/info/user_detail.route'));
+app.use('/account/profile', require('./routes/info/user_detail.route'));
+
 
 /// ADMIN
 app.use('/admin/cate_management', require('./routes/admin/categories.route'));
