@@ -1,14 +1,8 @@
 {{#section 'css'}}
 <style>
 	h1 {
-		font-size: 1em;
+		font-size: 1em
 	}
-
-	.post {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
 </style>
 {{/section}}
 <!-- SECTION -->
@@ -25,10 +19,7 @@
 					<!-- tab nav -->
 					<ul class="tab-nav pull-right">
 						<li class="active"><a data-toggle="tab" href="#all">All</a></li>
-						<li><a data-toggle="tab" href="#nongsan">Nông sản</a></li>
-						<li><a data-toggle="tab" href="#haisan">Hải sản</a></li>
-						<li><a data-toggle="tab" href="#giaoduc">Giáo dục</a></li>
-						<li><a data-toggle="tab" href="#chinhtri">Chính trị</a></li>
+
 					</ul>
 					<!-- /tab nav -->
 				</div>
@@ -37,13 +28,12 @@
 				<!-- Tab content -->
 				<div class="tab-content">
 					<!-- tab1 -->
-					<div id="all" class="tab-pane fade in active post">
+					<div id="all" class="tab-pane fade in active">
 						<!-- row -->
-						<div class="row post">
-							{{#each this.posts}}
+						<div class="row">
+							{{#each this.p4}}
 							<!-- Column 1 -->
-							
-								<div class="col-md-3 col-sm-6">
+							<div class="col-md-3 col-sm-6">
 								<!-- ARTICLE -->
 								<article class="article">
 									<div class="article-img">
@@ -64,28 +54,46 @@
 								</article>
 								<!-- /ARTICLE -->
 							</div>
-							
-							
 							<!-- /Column 1 -->
 							{{/each}}
 							<!-- /row -->
 						</div>
-					</div>
-					<!-- /tab1 -->
+						<!-- row -->
+						<div class="row">
+							<!-- Column 1 -->
+							<div class="col-md-4 col-sm-6">
+								{{#each this.p6}}
+								<!-- ARTICLE -->
+								<article class="article  widget-article">
+									<div class="article-img">
+										<a href="/post/{{postid}}">
+											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
+										</a>
+										<ul class="article-info">
+											<li class="article-type"><i class="fa fa-camera"></i></li>
+										</ul>
+									</div>
+									<div class="article-body">
+										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+										<ul class="article-meta">
+											<li><i class="fa fa-clock-o"></i>{{date}}</li>
+											<li><i class="fa fa-comments"></i> 33</li>
+										</ul>
+									</div>
+								</article>
+								<!-- /ARTICLE -->
+								{{/each}}
+							</div>
+							<!-- /Column 1 -->
 
-					<!-- tab1 -->
-					<div id="nongsan" class="tab-pane fade in active post">
-						<!-- row -->
-						<div class="row post">
-							{{#each this.nongsan}}
-							<!-- Column 1 -->
-							
-								<div class="col-md-3 col-sm-6">
+							<!-- Column 2 -->
+							<div class="col-md-4 col-sm-6">
+								{{#each this.p8}}
 								<!-- ARTICLE -->
-								<article class="article">
+								<article class="article  widget-article">
 									<div class="article-img">
 										<a href="/post/{{postid}}">
-											<img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
 										</a>
 										<ul class="article-info">
 											<li class="article-type"><i class="fa fa-camera"></i></li>
@@ -94,17 +102,43 @@
 									<div class="article-body">
 										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
 										<ul class="article-meta">
-											<li><i class="fa fa-clock-o"></i> {{date}} </li>
+											<li><i class="fa fa-clock-o"></i>{{date}}</li>
 											<li><i class="fa fa-comments"></i> 33</li>
 										</ul>
 									</div>
 								</article>
 								<!-- /ARTICLE -->
+								{{/each}}
 							</div>
-							<!-- /Column 1 -->
-							{{/each}}
-							<!-- /row -->
+							<!-- /Column 2 -->
+
+							<!-- /Column 3 -->
+							<div class="col-md-4 hidden-sm">
+								{{#each this.p10}}
+								<!-- ARTICLE -->
+								<article class="article  widget-article">
+									<div class="article-img">
+										<a href="/post/{{postid}}">
+											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
+										</a>
+										<ul class="article-info">
+											<li class="article-type"><i class="fa fa-camera"></i></li>
+										</ul>
+									</div>
+									<div class="article-body">
+										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+										<ul class="article-meta">
+											<li><i class="fa fa-clock-o"></i>{{date}}</li>
+											<li><i class="fa fa-comments"></i> 33</li>
+										</ul>
+									</div>
+								</article>
+								<!-- /ARTICLE -->
+								{{/each}}
+							</div>
+							<!-- /Column 3 -->
 						</div>
+						<!-- /row -->
 					</div>
 					<!-- /tab1 -->
 				</div>

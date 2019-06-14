@@ -16,10 +16,17 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
+  
     postModel.single(id).then(rows => {
         if(rows.length > 0) {
+            console.log("VALUE: " + rows[0].views);
+            var entity = {
+                postid: rows[0].postid,
+                views: rows[0].views + 1
+            }
+            postModel.update(entity);
             res.render('post', {
-                post: rows[0],
+                post: rows[0],               
             });
         }
     }).catch(next);

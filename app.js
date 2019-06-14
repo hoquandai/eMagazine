@@ -43,14 +43,9 @@ app.get('/', (req, res) => {
 /// READER
 app.use('/home', require('./routes/home.route'));
 app.use('/news', require('./routes/reader/news.route'));
-app.use('/chinhtri', require('./routes/reader/chinhtri.route'));
 app.use('/top', require('./routes/reader/top.route'));
-app.use('/giaoduc', require('./routes/reader/giaoduc.route'));
-app.use('/xahoi', require('./routes/reader/xahoi.route'));
-app.use('/phapluat', require('./routes/reader/phapluat.route'));
-app.use('/nongsan', require('./routes/reader/kinhdoanh/nongsan.route'));
-app.use('/haisan', require('./routes/reader/kinhdoanh/haisan.route'));
 app.use('/subscriber', require('./routes/subscriber/index.route'));
+app.use('/reader/category', require('./routes/reader/category.route'));
 
 /// INFO
 app.use('/about', require('./routes/info/about.route'));
@@ -63,17 +58,15 @@ app.use('/account/profile', require('./routes/info/user_detail.route'));
 
 
 /// ADMIN
-app.use('/admin/cate_management', require('./routes/admin/categories.route'));
-app.use('/admin/detail_management', require('./routes/admin/detail.route'));
-app.use('/admin/post_management', require('./routes/admin/posts.route'));
-app.use('/admin/tag_management', require('./routes/admin/tag.route'));
-app.use('/admin//user_management', require('./routes/admin/users.route'));
-app.use('/admin/writer_post', require('./routes/writer/post.route'));
-app.use('/admin/writer_posted', require('./routes/writer/posted.route'));
+app.use('/admin/categories', require('./routes/admin/categories.route'));
+app.use('/admin/details', require('./routes/admin/detail.route'));
+app.use('/admin/posts', require('./routes/admin/posts.route'));
+app.use('/admin/tags', require('./routes/admin/tag.route'));
+app.use('/admin/users', require('./routes/admin/users.route'));
 
 /// EDITOR
 app.use('/editor', require('./routes/editor/index.route'));
-app.use('/editor_post', require('./routes/editor/post.route'));
+app.use('/editor/post', require('./routes/editor/post.route'));
 
 /// WRITER
 app.use('/writer/post', require('./routes/writer/post.route'));

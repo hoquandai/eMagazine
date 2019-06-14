@@ -1,15 +1,16 @@
 var mysql = require('mysql');
 
-/*var createConnection = () => {
+var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
         port: 3030,
         user: 'root',
         password: 'legolas1508',
-        database: 'emagazine'
+        database: 'emagazine',
+        multipleStatements: true
     });
-}*/
- var createConnection = () => {
+}
+/* var createConnection = () => {
      return mysql.createConnection({
         host: 'localhost',
          port: 3306,
@@ -18,6 +19,7 @@ var mysql = require('mysql');
          database: 'web-final'
      });
  }
+*/
 /*
 var createConnection = () => {
     return mysql.createConnection({
@@ -70,7 +72,7 @@ module.exports = {
 
     update: (tableName, idField, entity) => {
         return new Promise((resolve, reject) => {
-            var id = entity[idFiled];
+            var id = entity[idField];
             delete entity[idField];
 
             var sql = `update ${tableName} set ? where ${idField} = ?`;

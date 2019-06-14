@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
-        res.render('admin/tag_management', {
+        res.render('admin/tags', {
             categories: rows
         });
     }).catch(next);

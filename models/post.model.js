@@ -5,8 +5,19 @@ module.exports = {
         return db.load('select * from posts');
     },
 
-    allByCategory: cateid => {
-        return db.load(`select * from posts where cateid = ${cateid}`);
+    allByCategory: catename => {
+        return db.load(`select * from posts where category = N'${catename}'`);
+    },
+
+    partPostsByCate: catename => {
+        return db.load(`select * from posts where category = N'${catename}' limit 4;select * from posts where category = N'${catename}' limit 4, 2;
+        select * from posts where category = N'${catename}' limit 6, 2;select * from posts where category = N'${catename}' limit 8, 2`);
+    },
+
+    allTop: () => {
+        return db.load(`select * from posts order by views desc limit 10;select * from posts where category = N'nongsan' order by views desc limit 10;
+        select * from posts where category = N'haisan' order by views desc limit 10;select * from posts where category = N'giaoduc' order by views desc limit 10
+        ;select * from posts where category = N'chinhtri' order by views desc limit 10`);
     },
 
     single: id => {
