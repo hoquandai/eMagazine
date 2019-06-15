@@ -14,15 +14,25 @@ module.exports = {
     },
 
     allTop: () => {
-        return db.load(`select * from posts order by views desc limit 10`);
+        return db.load(`select * from posts order by views desc limit 8`);
     },
 
     topByCate: catenames => {
-        console.log(catenames);
-        var query = `select * from posts order by views desc limit 10;`;
+        //console.log(catenames);
+        var query = `select * from posts order by views desc limit 8;`;
         catenames.forEach(catename => {
-            console.log(catename);
-            query += `select * from posts where category = N'${catename}' order by views desc limit 10;`;
+            //console.log(catename);
+            query += `select * from posts where category = N'${catename}' order by views desc limit 8;`;
+        });
+        return db.load(query);
+    },
+
+    newByCate: catenames => {
+        //console.log(catenames);
+        var query = `select * from posts order by date desc limit 8;`;
+        catenames.forEach(catename => {
+            //console.log(catename);
+            query += `select * from posts where category = N'${catename}' order by date desc limit 8;`;
         });
         return db.load(query);
     },
@@ -41,5 +51,19 @@ module.exports = {
 
     delete: id => {
         return db.delete('posts', id, id);
-    }
+    },
+
+    loadForHome: catenames => {
+        var query = 'select * from posts order by views desc limit 3;'
+        
+        catenames.forEach(catename => {
+            //console.log(catename);
+            query += `select * from posts where category = N'${catename}' order by views desc limit 10;`;
+            query += `select * from posts where category = N'${catename}' order by date desc limit 10;`;
+            query += `select * from posts where category = N'${catename}' order by date desc limit 1;`;
+        });
+
+        return db.load(query);
+    },
+
 };

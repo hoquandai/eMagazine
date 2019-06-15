@@ -1,25 +1,51 @@
 var express = require('express');
-// var categoryModel = require('../../models/category.model')
+var categoryModel = require('../../models/category.model')
 var postModel = require('../../models/post.model')
 var router = express.Router();
 
 
 router.get('/', (req, res, next) => {
-    var p = postModel.allTop();
-    // var ns = postModel.topByCategory('nongsan');
-    //console.log("NONGSAN:\n" +  + "\nEND");
-
-    p.then(rows => {
-        console.log(rows);
-        res.render('reader/top', {
-            posts: rows[0],
-            nongsan: rows[1],
-            haisan: rows[2],
-            giaoduc: rows[3],
-            chinhtri: rows[4],
-            active: true
+    var cn = [];
+    var catenames = categoryModel.catenames();
+    catenames.then(rows => {
+        var i = 0;
+        rows.forEach(row => {
+            cn[i] = row.cn;
+            i++
         });
+        console.log(cn);
+
+        var posts = postModel.topByCate(cn);
+        posts.then(rows => {
+            var entity = {};
+            var myentity = {};
+            var categories = {};
+            var i = 0;
+            
+            myentity['names'] = 'all';
+            myentity['posts'] = rows[i];
+            categories[0] = myentity;
+            i++;
+
+            cn.forEach(c => { 
+                var newentity = {}
+                newentity.names = c;
+                //console.log("MYENTITY: " + newentity.names);
+                newentity.posts = rows[i];
+                categories[i] = newentity;
+                catenames[i] = c;
+                i++;
+            });
+
+            entity['catenames'] = catenames;
+            entity['categories'] = categories;
+            //console.log("CATENAME: " + entity['catenames']);
+            //console.log("CATES: " + categories[0]['names']);
+            //console.log("CATES: " + categories[1]['names']);
+            res.render('reader/top', entity);
+        }).catch(next)
     }).catch(next);
 })
+
 
 module.exports = router;

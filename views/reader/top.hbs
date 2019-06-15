@@ -11,6 +11,11 @@
 
 </style>
 {{/section}}
+
+{{#section 'js'}}
+	var i = 0;
+{{/section}}
+
 <!-- SECTION -->
 <div class="section">
 	<!-- CONTAINER -->
@@ -25,10 +30,10 @@
 					<!-- tab nav -->
 					<ul class="tab-nav pull-right">
 						<li class="active"><a data-toggle="tab" href="#all">All</a></li>
-						<li><a data-toggle="tab" href="#nongsan">Nông sản</a></li>
-						<li><a data-toggle="tab" href="#haisan">Hải sản</a></li>
-						<li><a data-toggle="tab" href="#giaoduc">Giáo dục</a></li>
-						<li><a data-toggle="tab" href="#chinhtri">Chính trị</a></li>
+						{{#each this.catenames as |item index|}}
+						<li><a data-toggle="tab" href="#{{{item}}}">{{{item}}}</a></li>
+						{{/each}}
+						
 					</ul>
 					<!-- /tab nav -->
 				</div>
@@ -37,49 +42,12 @@
 				<!-- Tab content -->
 				<div class="tab-content">
 					<!-- tab1 -->
-					<div id="all" class="tab-pane fade in active post">
+					{{#each this.categories}}
+					<div id="{{names}}" class="tab-pane fade in active post">
 						<!-- row -->
 						<div class="row post">
-							{{#each this.posts}}
+							{{#each posts}}
 							<!-- Column 1 -->
-							
-								<div class="col-md-3 col-sm-6">
-								<!-- ARTICLE -->
-								<article class="article">
-									<div class="article-img">
-										<a href="/post/{{postid}}">
-											<img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
-										</a>
-										<ul class="article-info">
-											<li class="article-type"><i class="fa fa-camera"></i></li>
-										</ul>
-									</div>
-									<div class="article-body">
-										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
-										<ul class="article-meta">
-											<li><i class="fa fa-clock-o"></i> {{date}} </li>
-											<li><i class="fa fa-comments"></i> 33</li>
-										</ul>
-									</div>
-								</article>
-								<!-- /ARTICLE -->
-							</div>
-							
-							
-							<!-- /Column 1 -->
-							{{/each}}
-							<!-- /row -->
-						</div>
-					</div>
-					<!-- /tab1 -->
-
-					<!-- tab1 -->
-					<div id="nongsan" class="tab-pane fade in active post">
-						<!-- row -->
-						<div class="row post">
-							{{#each this.nongsan}}
-							<!-- Column 1 -->
-							
 								<div class="col-md-3 col-sm-6">
 								<!-- ARTICLE -->
 								<article class="article">
@@ -106,6 +74,7 @@
 							<!-- /row -->
 						</div>
 					</div>
+					{{/each}}
 					<!-- /tab1 -->
 				</div>
 				<!-- /tab content -->
