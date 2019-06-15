@@ -1,7 +1,9 @@
 var express = require('express');
 var bcrypt = require('bcrypt');
 var moment = require('moment');
+var passport = require('passport');
 var userModel = require('../../models/user.model');
+var auth = require('../../middlewares/auth');
 
 var router = express.Router();
 
@@ -31,12 +33,49 @@ router.post('/signup', (req, res, next) => {
         username: req.body.username,
         password: hash,
         email: req.body.email,
-        dayOfBird: dob
+        dayOfBird: dob,
+        permissions: 0
     };
 
     userModel.add(entity).then(id => {
         res.redirect('/account/login');
     })
 });
+
+router.get('/login', (req, res, next) => {
+    res.render('info/login', {layout: false});
+})
+
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) { 
+            return next(err); 
+        }
+
+        if (!user) { 
+            return res.render('info/login', {
+                layout: false,
+                err_message: info.message
+            }) 
+        }
+
+        req.logIn(user, err => {
+            if (err){
+                return next(err);
+            }
+
+            return res.redirect('/');
+        })
+    })(req, res, next);
+})
+
+router.get('/profile', auth, (req, res, next) => {
+    res.end('hello');
+})
+
+router.post('/logout', auth, (req, res, next) => {
+    req.logOut();
+    res.redirect('/account/login');
+  })
 
 module.exports = router;

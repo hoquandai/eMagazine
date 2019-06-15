@@ -23,9 +23,11 @@ app.set('view engine', 'hbs');
 app.use(require('./middlewares/locals.categories.mdw'));
 
 app.use(express.static('public'));
-require('./middlewares/passport')(app);
 require('./middlewares/session')(app);
+require('./middlewares/passport')(app);
 require('./middlewares/upload')(app);
+
+app.use(require('./middlewares/auth-locals-mdw'));
 
 app.get('/', (req, res) => {
     var p = categoryModel.all();
@@ -51,8 +53,7 @@ app.use('/reader/category', require('./routes/reader/category.route'));
 app.use('/about', require('./routes/info/about.route'));
 app.use('/privacy', require('./routes/info/privacy.route'));
 app.use('/contact', require('./routes/info/contact.route'));
-app.use('/account', require('./routes/info/login.route'));
-app.use('/', require('./routes/info/signup.route'));
+app.use('/account', require('./routes/info/account.route'));
 app.use('/user_detail', require('./routes/info/user_detail.route'));
 app.use('/account/profile', require('./routes/info/user_detail.route'));
 
