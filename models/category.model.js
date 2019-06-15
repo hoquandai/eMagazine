@@ -12,6 +12,10 @@ module.exports = {
         `);
     },
 
+    state: state => {
+        return db.load(`select * from posts where state = ${state}`);
+    },
+
     catenames: () => {
         return db.load(`select substr(catename, 18) as cn from catenames`);
         //return db.load(`select * from categories`);

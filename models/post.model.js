@@ -77,5 +77,15 @@ module.exports = {
     getPostsBySearchString: search => {
         var query = `SELECT * FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}');`
         return db.load(query);
-    }
+    },
+
+    postByState: states => {
+        //console.log(catenames);
+        var query = ``;
+        states.forEach(state => {
+            //console.log(catename);
+            query += `select * from posts where state = N'${state}';`;
+        });
+        return db.load(query);
+    },
 };

@@ -19,195 +19,31 @@
                             <div id="tab1" class="tab-pane fade in active">
                                 <!-- row -->
                                 <div class="row">
+                                    {{#each this.post0}}
                                     <!-- Column 1 -->
                                     <div class="col-md-3 col-sm-6">
                                         <!-- ARTICLE -->
                                         <article class="article">
                                             <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-1.jpg" alt="">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
                                                 </a>
                                                 <ul class="article-info">
                                                     <li class="article-type"><i class="fa fa-file-text"></i></li>
                                                 </ul>
                                             </div>
                                              <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
                                             </div>
-                                            
                                         </article>
                                         <!-- /ARTICLE -->
                                     </div>
+                                    {{/each}}
                                     <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- Column 3 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
-                                    
-                                    <!-- Column 4 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- Column 4 -->
-                                </div>
-                                <!-- /row -->
-                                
-                                <!-- row -->
-                                <div class="row">
-                                    <!-- Column 1 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-3.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- /Column 3 -->
-                                    <div class="col-md-4 hidden-sm">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-5.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-6.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
                                 </div>
                                 <!-- /row -->
                             </div>
                             <!-- /tab1 -->
-                            <div id="tab2" class="tab-pane fade in active">
-                                
-                            </div>
                         </div>
                         <!-- /tab content -->
                     </div>
@@ -240,195 +76,32 @@
                             <div id="tab1" class="tab-pane fade in active">
                                 <!-- row -->
                                 <div class="row">
+                                    {{#each this.post1}}
                                     <!-- Column 1 -->
                                     <div class="col-md-3 col-sm-6">
                                         <!-- ARTICLE -->
                                         <article class="article">
                                             <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-1.jpg" alt="">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
                                                 </a>
                                                 <ul class="article-info">
                                                     <li class="article-type"><i class="fa fa-file-text"></i></li>
                                                 </ul>
                                             </div>
                                              <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
                                             </div>
                                             
                                         </article>
                                         <!-- /ARTICLE -->
                                     </div>
+                                    {{/each}}
                                     <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- Column 3 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
-                                    
-                                    <!-- Column 4 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- Column 4 -->
-                                </div>
-                                <!-- /row -->
-                                
-                                <!-- row -->
-                                <div class="row">
-                                    <!-- Column 1 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-2.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-3.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- /Column 3 -->
-                                    <div class="col-md-4 hidden-sm">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-5.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-6.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
                                 </div>
                                 <!-- /row -->
                             </div>
-                            <!-- /tab1 -->
-                            <div id="tab2" class="tab-pane fade in active">
-                                
-                            </div>
+                           
                         </div>
                         <!-- /tab content -->
                     </div>
@@ -461,214 +134,32 @@
                             <div id="tab1" class="tab-pane fade in active">
                                 <!-- row -->
                                 <div class="row">
+                                    {{#each this.post2}}
                                     <!-- Column 1 -->
                                     <div class="col-md-3 col-sm-6">
                                         <!-- ARTICLE -->
                                         <article class="article">
                                             <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-1.jpg" alt="">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
                                                 </a>
                                                 <ul class="article-info">
                                                     <li class="article-type"><i class="fa fa-edit"></i></li>
                                                 </ul>
                                             </div>
                                             <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
                                                 
                                             </div>
                                         </article>
                                         <!-- /ARTICLE -->
                                     </div>
+                                    {{/each}}
                                     <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- Column 3 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
-                                    
-                                    <!-- Column 4 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- Column 4 -->
-                                </div>
-                                <!-- /row -->
-                                
-                                <!-- row -->
-                                <div class="row">
-                                    <!-- Column 1 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-1.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- /Column 3 -->
-                                    <div class="col-md-4 hidden-sm">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-5.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-6.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
                                 </div>
                                 <!-- /row -->
                             </div>
                             <!-- /tab1 -->
-                            <div id="tab2" class="tab-pane fade in active">
-                                
-                            </div>
                         </div>
                         <!-- /tab content -->
                     </div>
@@ -680,7 +171,7 @@
         </div>
         <!-- /SECTION -->
 
-              <!-- SECTION -->
+        <!-- SECTION -->
         <div class="section">
             <!-- CONTAINER -->
             <div class="container">
@@ -701,214 +192,32 @@
                             <div id="tab1" class="tab-pane fade in active">
                                 <!-- row -->
                                 <div class="row">
+                                    {{#each this.post3}}
                                     <!-- Column 1 -->
                                     <div class="col-md-3 col-sm-6">
                                         <!-- ARTICLE -->
                                         <article class="article">
                                             <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-1.jpg" alt="">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
                                                 </a>
                                                 <ul class="article-info">
                                                     <li class="article-type"><i class="fa fa-edit"></i></li>
                                                 </ul>
                                             </div>
                                             <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
                                                 
                                             </div>
                                         </article>
                                         <!-- /ARTICLE -->
                                     </div>
+                                    {{/each}}
                                     <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- Column 3 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
-                                    
-                                    <!-- Column 4 -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-md-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- Column 4 -->
-                                </div>
-                                <!-- /row -->
-                                
-                                <!-- row -->
-                                <div class="row">
-                                    <!-- Column 1 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-1.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-2.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 1 -->
-                                    
-                                    <!-- Column 2 -->
-                                    <div class="col-md-4 col-sm-6">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-3.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-4.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 2 -->
-                                    
-                                    <!-- /Column 3 -->
-                                    <div class="col-md-4 hidden-sm">
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-5.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                                
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                        
-                                        <!-- ARTICLE -->
-                                        <article class="article widget-article">
-                                            <div class="article-img">
-                                                <a href="#">
-                                                    <img src="./img/img-widget-6.jpg" alt="">
-                                                </a>
-                                                <ul class="article-info">
-                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="article-body">
-                                                <h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor consequat.</a></h4>
-                                               
-                                            </div>
-                                        </article>
-                                        <!-- /ARTICLE -->
-                                    </div>
-                                    <!-- /Column 3 -->
                                 </div>
                                 <!-- /row -->
                             </div>
                             <!-- /tab1 -->
-                            <div id="tab2" class="tab-pane fade in active">
-                                
-                            </div>
                         </div>
                         <!-- /tab content -->
                     </div>
