@@ -16,7 +16,8 @@ var createConnection = () => {
          port: 3306,
          user: 'root',
          password: 'MyNewPass',
-         database: 'web-final'
+         database: 'web-final',
+         multipleStatements: true
      });
  }
 */
@@ -27,7 +28,8 @@ var createConnection = () => {
         port: 3306,
         user: 'root',
         password: 'pai14061998',
-        database: 'emagazine'
+        database: 'emagazine',
+        multipleStatements: true
     });
 }*/
 

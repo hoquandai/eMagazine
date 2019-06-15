@@ -12,6 +12,11 @@ module.exports = {
         `);
     },
 
+    catenames: () => {
+        return db.load(`select substr(catename, 18) as cn from catenames`);
+        //return db.load(`select * from categories`);
+    },
+
     single: id => {
         return db.load(`select * from categories where name = ${id}`);
     },
