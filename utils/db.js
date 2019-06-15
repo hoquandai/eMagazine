@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-/*var createConnection = () => {
+var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
         port: 3030,
@@ -9,7 +9,7 @@ var mysql = require('mysql');
         database: 'emagazine',
         multipleStatements: true
     });
-}*/
+}
 /* var createConnection = () => {
      return mysql.createConnection({
         host: 'localhost',

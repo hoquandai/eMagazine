@@ -38,7 +38,10 @@ module.exports = {
     },
 
     single: id => {
-        return db.load(`select * from posts where postid = ${id}`);
+        //var query = `select * from posts where postid = ${id} limit 1;`
+        var query = `select * from posts where category in (select category from posts where postid = ${id}) order by views desc limit 8;`;
+        //query += `select * from posts where postid = ${id} limit 1;`
+        return db.load(query);
     },
 
     add: entity => {
@@ -53,17 +56,26 @@ module.exports = {
         return db.delete('posts', id, id);
     },
 
-    loadForHome: catenames => {
+    loadForHome: () => {
+        // top 3 posts by views
         var query = 'select * from posts order by views desc limit 3;'
         
-        catenames.forEach(catename => {
-            //console.log(catename);
-            query += `select * from posts where category = N'${catename}' order by views desc limit 10;`;
-            query += `select * from posts where category = N'${catename}' order by date desc limit 10;`;
-            query += `select * from posts where category = N'${catename}' order by date desc limit 1;`;
-        });
+        // top 10 posts by views each cate
+        query += `select * from posts order by views desc limit 10;`;
+       
+        // top 10 posts by date each cate
+        query += `select * from posts order by date desc limit 10;`;
 
         return db.load(query);
     },
 
+    getPostsByTag: tag => {
+        var query = `SELECT * FROM posts WHERE MATCH(tag1, tag2, tag3) AGAINST (N'${tag}')`;
+        return db.load(query);
+    },
+
+    getPostsBySearchString: search => {
+        var query = `SELECT * FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}');`
+        return db.load(query);
+    }
 };

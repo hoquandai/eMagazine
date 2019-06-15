@@ -15,34 +15,30 @@ router.get('/', (req, res, next) => {
         });
         console.log(cn);
 
-        var posts = postModel.loadForHome(cn);
+        var posts = postModel.loadForHome();
         posts.then(rows => {
             var entity = {};
-            var myentity = {};
-            var categories = {};
-            var i = 0;
+            var top3 = {};
+            var view10 = {};
+            var new10 = {};
             
-            myentity['names'] = 'top3';
-            myentity['posts'] = rows[i];
-            categories[0] = myentity;
-            i++;
+            console.log("HERE");
+            
+            top3['name'] = 'top3';
+            top3['posts'] = rows[0];
 
-            cn.forEach(c => { 
-                var newentity = {}
-                newentity.names = c;
-                //console.log("MYENTITY: " + newentity.names);
-                newentity.posts = rows[i];
-                categories[i] = newentity;
-                catenames[i] = c;
-                i++;
-            });
+            view10['name'] = 'view10';
+            view10['posts'] = rows[1];
+            
+            new10['name'] = 'date10';
+            new10['posts'] = rows[2];
 
-            entity['catenames'] = catenames;
-            entity['categories'] = categories;
-            //console.log("CATENAME: " + entity['catenames']);
-            //console.log("CATES: " + categories[0]['names']);
-            //console.log("CATES: " + categories[1]['names']);
-            res.render('/home', entity);
+            entity['top3'] = top3;
+            entity['view10'] = view10;
+            entity['new10'] = new10;
+
+            console.log(entity['top3'].name);
+            res.render('home', entity);
         }).catch(next)
     }).catch(next);
 })

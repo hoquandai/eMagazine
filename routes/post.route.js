@@ -16,19 +16,29 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
-  
+
     postModel.single(id).then(rows => {
-        if(rows.length > 0) {
-            console.log("VALUE: " + rows[0].views);
-            var entity = {
-                postid: rows[0].postid,
-                views: rows[0].views + 1
+        var toRender = {}
+        var others = {}
+        var i = 1;
+        rows.forEach(row => {
+            if(row.postid == id) {
+                toRender['main'] = row;
+            } else {
+                toRender[i] = row;
             }
-            postModel.update(entity);
-            res.render('post', {
-                post: rows[0],               
-            });
+            i++;
+        });
+
+        var entity = {
+            postid: toRender['main'].postid,
+            views: toRender['main'].views + 1
         }
+        postModel.update(entity);
+        res.render('post', {
+            post: toRender['main'],
+            others: toRender
+        });
     }).catch(next);
 });
 
