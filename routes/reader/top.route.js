@@ -47,5 +47,15 @@ router.get('/', (req, res, next) => {
     }).catch(next);
 })
 
-
+router.post('/', (req, res, next) => {
+    var searchString = req.body.search;
+    console.log(searchString);
+    var posts = postModel.getPostsBySearchString(searchString);
+    posts.then(rows => {
+        res.render('reader/search', { posts: rows, search: searchString });
+    }).catch(err => {
+        console.log(err);
+        next
+    })
+});
 module.exports = router;

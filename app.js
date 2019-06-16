@@ -6,6 +6,7 @@ var app = express();
 var categoryModel = require('./models/category.model')
 var postModel = require('./models/post.model')
 var cookieParser = require('cookie-parser');
+var dateFormat = require('dateformat')
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -16,7 +17,10 @@ app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',
     layoutsDir: 'views/_layouts',
     helpers: {
-        section: hbs_sections()
+        section: hbs_sections(),
+        format: val => {
+            return dateFormat(val, "dddd, mmmm dS, yyyy");
+        }
     }
 }));
 
