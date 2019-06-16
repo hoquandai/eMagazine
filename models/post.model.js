@@ -59,10 +59,10 @@ module.exports = {
         var query = 'select * from posts order by views desc limit 3;'
         
         // top 10 posts by views each cate
-        query += `select * from posts order by views desc limit 10;`;
+        query += `select * from posts order by views desc limit 12;`;
        
         // top 10 posts by date each cate
-        query += `select * from posts order by date desc limit 10;`;
+        query += `select * from posts order by date desc limit 12;`;
 
         return db.load(query);
     },
@@ -99,6 +99,21 @@ module.exports = {
 
     relatedPost: id => {
         var query = `select p.* from posts p where p.category in (select category from posts where postid = ${id}) and p.postid != ${id} order by views desc limit 8;`;
+        return db.load(query);
+    },
+
+    thumbnailPost: limit => {
+        var query = `select * from posts order by views desc limit ${limit};`
+        return db.load(query);
+    },
+
+    mediumPost: (limit, offset) => {
+        var query = `select * from posts order by views desc limit ${limit} offset ${offset};`
+        return db.load(query);
+    },
+
+    featuredPost: limit => {
+        var query = `select * from posts order by date desc limit ${limit};`
         return db.load(query);
     },
 };
