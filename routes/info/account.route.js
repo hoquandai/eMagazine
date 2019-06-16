@@ -70,7 +70,29 @@ router.post('/login', (req, res, next) => {
 })
 
 router.get('/profile', auth, (req, res, next) => {
-    res.end('hello');
+    userModel.signle(res.locals.authUser.id_User).then(value => {
+        res.render('info/user_detail', {layout: false, user: value});
+    })
+})
+
+router.get('/changeprofile', (req, res, next) => {
+    res.render('info/user_change', {layout: false});
+})
+
+router.post('/changeprofile', (req, res, next) => {
+    var dob = moment(req.body.dob, 'DD/MM/YYYY').format('YYYY-MM-DD');
+    console.log(req.user.id_User);
+    var entity = {
+        username: req.body.username,
+        password: req.user.password,
+        email: req.body.email,
+        dayOfBird: dob,
+        permissions: 0
+    };
+
+    userModel.update(req.user.id_User, entity).then(id => {
+        res.redirect('/');
+    })
 })
 
 router.post('/logout', auth, (req, res, next) => {

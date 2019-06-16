@@ -28,34 +28,32 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Profile</h2>
-                        <form novalidate method="POST" action="" class="register-form" id="registerForm">
-                            {{#each this.user}}
+                        <form novalidate method="POST" action="" class="change_form" id="changeForm">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="txtUsername" value="{{username}}" disabled />
+                                <input type="text" name="username" id="txtUsername" value="{{authUser.username}}"  />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="txtEmail" value="{{email}}" disabled />
+                                <input type="email" name="email" id="txtEmail" value="{{authUser.email}}" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-calendar"></i></label>
                                 <input type="text" class="form-control" id="txtDOB" name="dob"
-                                    value="  {{dayOfBird}}" disabled>
+                                    value="{{authUser.dayOfBird}}">
                             </div>
-                            {{/each}}
                             <div class="form-group d-flex">
                                 <div>
-                                    <a class="btn btn-lg btn-outline-info btn-block" href="/" role="button" id="cancel">
-                                        <i class="fa fa-home" aria-hidden="true"></i>
-                                        Home
+                                    <a class="btn btn-lg btn-outline-info btn-block" href="/account/profile" role="button" id="cancel">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                        Cancel
                                     </a>
                                 </div>
                                 <div class="flex-fill ml-1">
-                                    <a class="btn btn-info btn-lg btn-block" id="show-btn" role="button" href="/account/changeprofile">
-                                        <i class="fa fa-edit" aria-hidden="true"></i>
-                                        Update
-                                    </a>
+                                    <button class="btn btn-info btn-lg btn-block" id="show-btn" type="submit">
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                        Save
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -72,17 +70,17 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script>
         $(function () {
-            {{!-- $('#txtDOB').datetimepicker({
+            $('#txtDOB').datetimepicker({
                 format: 'd/m/Y',
                 timepicker: false,
                 mask: true,
-            }); --}}
+            });
 
-            $('#registerForm').validate({
+            $('#changeForm').validate({
                 rules: {
                     username: {
                         required: true,

@@ -6,7 +6,7 @@ module.exports = {
     },
 
     signle: id_User => {
-        return db.load(`select * from Users where id = ${id_User}`);
+        return db.load(`select * from Users where id_User = ${id_User}`);
     },
 
     signleByUserName: username => {
@@ -15,5 +15,9 @@ module.exports = {
 
     add: entity => {
         return db.add('Users', entity);
+    },
+
+    update: (id, entity) => {
+        return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', password = '${entity.password}', dayOfBird = '${entity.dayOfBird}', permissions = '${entity.permissions}' where id_User = '${id}';`);
     }
 };
