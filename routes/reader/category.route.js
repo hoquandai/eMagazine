@@ -19,17 +19,33 @@ router.get('/', (req, res, next) => {
 
 router.get('/:catename', (req, res, next) => {
     var catename = req.params.catename;
+    var page = req.query.page || 1;
+    if (page < 1) page = 1;
 
-    var posts = postModel.partPostsByCate(catename);
-    posts.then(rows => {
-        console.log(rows);
-        res.render('reader/category', {
-            p4: rows[0],
-            p6: rows[1],
-            p8: rows[2],
-            p10: rows[3]
-        });
-    }).catch(next); 
+    var limit = 8;
+    var offset = (page - 1) * limit;
+    
+    Promise.all([
+        postModel.pageByCate(catename, limit, offset), 
+        postModel.countByCate(catename),
+    ]).then(([rows, count]) => {
+        var total = count[0].total;
+        var nPages = Math.floor(total/limit);
+
+        if (total % limit > 0) nPages++;
+        console.log("PAGES: " + nPages);
+        var pages = []
+        for(i=1;i<=nPages;i++) {
+            var obj = {value: i, active: i === +page};
+            pages.push(obj);
+        }
+
+        res.render('reader/category', { category: catename, posts: rows, pages: pages})
+    })
+      .catch(err => {
+          console.log(err);
+          res.end('error occured');
+      })
 })
 
 module.exports = router;

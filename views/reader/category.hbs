@@ -1,7 +1,12 @@
 {{#section 'css'}}
 <style>
 	h1 {
-		font-size: 1em
+		font-size: 1em;
+	}
+
+	.post {
+		display: flex;
+		flex-wrap: wrap;
 	}
 </style>
 {{/section}}
@@ -15,11 +20,10 @@
 			<div class="col-md-12">
 				<!-- section title -->
 				<div class="section-title">
-					<h2 class="title">All posts</h2>
+					<h2 class="title">{{this.category}}</h2>
 					<!-- tab nav -->
 					<ul class="tab-nav pull-right">
 						<li class="active"><a data-toggle="tab" href="#all">All</a></li>
-
 					</ul>
 					<!-- /tab nav -->
 				</div>
@@ -28,10 +32,11 @@
 				<!-- Tab content -->
 				<div class="tab-content">
 					<!-- tab1 -->
-					<div id="all" class="tab-pane fade in active">
+
+					<div id="all" class="tab-pane fade in active post">
 						<!-- row -->
-						<div class="row">
-							{{#each this.p4}}
+						<div class="row post">
+							{{#each this.posts}}
 							<!-- Column 1 -->
 							<div class="col-md-3 col-sm-6">
 								<!-- ARTICLE -->
@@ -58,87 +63,6 @@
 							{{/each}}
 							<!-- /row -->
 						</div>
-						<!-- row -->
-						<div class="row">
-							<!-- Column 1 -->
-							<div class="col-md-4 col-sm-6">
-								{{#each this.p6}}
-								<!-- ARTICLE -->
-								<article class="article  widget-article">
-									<div class="article-img">
-										<a href="/post/{{postid}}">
-											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
-										</a>
-										<ul class="article-info">
-											<li class="article-type"><i class="fa fa-camera"></i></li>
-										</ul>
-									</div>
-									<div class="article-body">
-										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
-										<ul class="article-meta">
-											<li><i class="fa fa-clock-o"></i>{{date}}</li>
-											<li><i class="fa fa-comments"></i> 33</li>
-										</ul>
-									</div>
-								</article>
-								<!-- /ARTICLE -->
-								{{/each}}
-							</div>
-							<!-- /Column 1 -->
-
-							<!-- Column 2 -->
-							<div class="col-md-4 col-sm-6">
-								{{#each this.p8}}
-								<!-- ARTICLE -->
-								<article class="article  widget-article">
-									<div class="article-img">
-										<a href="/post/{{postid}}">
-											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
-										</a>
-										<ul class="article-info">
-											<li class="article-type"><i class="fa fa-camera"></i></li>
-										</ul>
-									</div>
-									<div class="article-body">
-										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
-										<ul class="article-meta">
-											<li><i class="fa fa-clock-o"></i>{{date}}</li>
-											<li><i class="fa fa-comments"></i> 33</li>
-										</ul>
-									</div>
-								</article>
-								<!-- /ARTICLE -->
-								{{/each}}
-							</div>
-							<!-- /Column 2 -->
-
-							<!-- /Column 3 -->
-							<div class="col-md-4 hidden-sm">
-								{{#each this.p10}}
-								<!-- ARTICLE -->
-								<article class="article  widget-article">
-									<div class="article-img">
-										<a href="/post/{{postid}}">
-											<img src="/img/{{category}}/{{postid}}/{{postid}}-thumb.jpg" alt="">
-										</a>
-										<ul class="article-info">
-											<li class="article-type"><i class="fa fa-camera"></i></li>
-										</ul>
-									</div>
-									<div class="article-body">
-										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
-										<ul class="article-meta">
-											<li><i class="fa fa-clock-o"></i>{{date}}</li>
-											<li><i class="fa fa-comments"></i> 33</li>
-										</ul>
-									</div>
-								</article>
-								<!-- /ARTICLE -->
-								{{/each}}
-							</div>
-							<!-- /Column 3 -->
-						</div>
-						<!-- /row -->
 					</div>
 					<!-- /tab1 -->
 				</div>
@@ -147,6 +71,33 @@
 			<!-- /Main Column -->
 		</div>
 		<!-- /ROW -->
+		<div class="row">
+			<div class="col-sm-12">
+				<nav aria-label="...">
+					<ul class="pagination">
+						<li class="page-item disabled">
+							<a class="page-link" href="#" tabindex="-1">Previous</a>
+						</li>
+						{{#each this.pages}}
+						{{#if active}}
+						<li class="page-item active">
+							<a class="page-link" href="javascript:;">{{value}} <span class="sr-only">(current)</span></a>
+						</li>
+						{{else}}
+						<li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
+						{{/if}}
+						
+						{{/each}}
+						{{!--<li class="page-item active">
+							<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+						</li>--}}
+						<li class="page-item">
+							<a class="page-link" href="#">Next</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</div>
 	<!-- /CONTAINER -->
 </div>

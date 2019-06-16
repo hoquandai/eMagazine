@@ -38,9 +38,7 @@ module.exports = {
     },
 
     single: id => {
-        //var query = `select * from posts where postid = ${id} limit 1;`
-        var query = `select * from posts where category in (select category from posts where postid = ${id}) order by views desc limit 8;`;
-        //query += `select * from posts where postid = ${id} limit 1;`
+        var query = `select * from posts where postid = ${id};`
         return db.load(query);
     },
 
@@ -86,6 +84,21 @@ module.exports = {
             //console.log(catename);
             query += `select * from posts where state = N'${state}';`;
         });
+        return db.load(query);
+    },
+
+    pageByCate: (cate, limit, offset) => {
+        var query = `select * from posts where category = N'${cate}' limit ${limit} offset ${offset};`
+        return db.load(query);
+    },
+
+    countByCate: cate => {
+        var query = `select count(*) as total from posts where category = N'${cate}';`;
+        return db.load(query);
+    },
+
+    relatedPost: id => {
+        var query = `select p.* from posts p where p.category in (select category from posts where postid = ${id}) and p.postid != ${id} order by views desc limit 8;`;
         return db.load(query);
     },
 };
