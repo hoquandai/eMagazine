@@ -30,10 +30,14 @@ module.exports = {
     },
 
     update: entity => {
-        return db.update('categories', 'id', entity);
+        return db.update('categories', 'cateid', entity);
     },
 
     delete: id => {
-        return db.delete('categories', 'id', id);
+        return db.delete('categories', 'cateid', id);
+    },
+
+    signleById: id => {
+        return db.load(`select * from categories where cateid = ${id}`);
     }
 };

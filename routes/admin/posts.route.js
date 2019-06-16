@@ -8,7 +8,8 @@ router.get('/', (req, res, next) => {
     p.then(rows => {
         console.log(rows);
         res.render('admin/posts', {
-            categories: rows
+            categories: rows,
+            layout: false
         });
     }).catch(next);
 })

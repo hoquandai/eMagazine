@@ -112,7 +112,7 @@
 					</div>
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="/admin/categories">Chuyên mục</a></li>
-						<li><a href="admin/tags">Tag</a></li>
+						<li><a href="/admin/tags">Tag</a></li>
 						<li><a href="/admin/posts">Bài viết</a></li>
 						<li><a href="/admin/users">Người dùng</a></li>
 					</ul>
@@ -131,86 +131,35 @@
 		<!-- /Nav Header -->
 	</header>
 	<!-- /Header -->
-	<!-- SECTION -->
-	<div class="section">
-		<!-- CONTAINER -->
-		<div class="container">
-			<!-- ROW -->
-			<div class="row">
-				<!-- Main Column -->
-				<div class="col-md-12">
-					<!-- section title -->
-					<div class="section-title">
-						<h2 class="title">Nhãn</h2>
-						<button class="title">Xem thêm</button>
-					</div>
-					<!-- /section title -->
-
-					<!-- Tab content -->
-					<div class="tab-content">
-						<!-- tab1 -->
-						<div id="tab1" class="tab-pane fade in active">
-							<!-- row -->
-							<div class="row">
-								<!-- Column 1 -->
-								<div class="col-md-3 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article">
-										<div class="article-body">
-											<ul>
-												<li>
-													<h4 class="article-title"><i class="fa fa-caret-right"> Nhãn 1
-															<button class="fa fa-pencil"></button><button
-																class="fa fa-trash-o"></button></i></i></h4>
-												</li>
-												<li>
-													<h4 class="article-title"><i class="fa fa-caret-right"> Nhãn 2
-															<button class="fa fa-pencil"></button><button
-																class="fa fa-trash-o"></button></i></h4>
-												</li>
-												<li>
-													<h4 class="article-title"><i class="fa fa-caret-right"> Nhãn 3
-															<button class="fa fa-pencil"></button><button
-																class="fa fa-trash-o"></button></i></h4>
-												</li>
-												<li>
-													<h4 class="article-title"><i class="fa fa-caret-right"> Nhãn 4
-															<button class="fa fa-pencil"></button><button
-																class="fa fa-trash-o"></button></i></h4>
-												</li>
-												<li>
-													<h4 class="article-title"><i class="fa fa-caret-right"> Nhãn 5
-															<button class="fa fa-pencil"></button><button
-																class="fa fa-trash-o"></button></i></h4>
-												</li>
-											</ul>
-										</div>
-										<div>
-											<a href="#">
-												<i class="fa fa-plus"></i><i> Thêm nhãn</i>
-											</a>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 1 -->
-							</div>
-							<!-- /row -->
-						</div>
-						<!-- /tab1 -->
-						<div id="tab2" class="tab-pane fade in active">
-
-						</div>
-					</div>
-					<!-- /tab content -->
-				</div>
-				<!-- /Main Column -->
-			</div>
-			<!-- /ROW -->
-		</div>
-		<!-- /CONTAINER -->
+	<div class="card shadow">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">#</th>
+					<th scope="col">Category</th>
+					<th scope="col" class="text-right">
+						<a class="btn btn-outline-success" href="/admin/categories/add" role="button">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							Add Category
+						</a>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each this.categories}}
+				<tr>
+					<th scope="row" class="text-center">{{cateid}}</th>
+					<td>{{name}}</td>
+					<td class="text-right">
+						<a class="btn btn-primary btn-sm" href="/admin/categories/edit/{{cateid}}" role="button">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
 	</div>
-	<!-- /SECTION-->
 	<!-- FOOTER -->
 	<footer id="footer">
 		<!-- Bottom Footer -->
