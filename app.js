@@ -99,6 +99,7 @@ app.use('/admin/users', require('./routes/admin/users.route'));
 /// EDITOR
 app.use('/editor', require('./routes/editor/index.route'));
 app.use('/editor/post', require('./routes/editor/post.route'));
+app.use('/editor/edit', require('./routes/editor/edit.route'));
 
 /// WRITER
 app.use('/writer/post', require('./routes/writer/post.route'));
