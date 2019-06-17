@@ -24,18 +24,15 @@ router.post('/', (req, res, next) => {
         var postid = req.body.postid;
 
         console.log(username + " | " + reason + " | " + postid);
-        console.log("here");
         var entity = {
             username: username,
             reason: reason,
             postid: postid
         }
-        
         reasonModel.add(entity).then(id =>{
             res.redirect('/editor');
         
     }).catch(next);
-    //res.end("...");
 });
 
 module.exports = router;

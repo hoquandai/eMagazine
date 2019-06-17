@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
-        res.render('admin/update', {
+        res.render('writer/edit', {
             categories: rows
         });
     }).catch(next);
@@ -19,7 +19,7 @@ router.get('/:id', (req, res, next) => {
     var id = req.params.id;
     postModel.single(id).then(rows => {
         console.log("POSTID: " + rows[0].postid);
-        res.render('admin/update', {
+        res.render('writer/edit', {
             post : rows
         });
 

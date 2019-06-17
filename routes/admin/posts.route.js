@@ -31,4 +31,12 @@ router.get('/', (req, res, next) => {
     }).catch(next);
 })
 
+router.post('/', (req, res, next) => {
+    var postid = req.body.postid;
+    console.log("POSTID: " + postid);
+    postModel.delete(postid);
+        res.redirect('/admin/posts');
+
+})
+
 module.exports = router;

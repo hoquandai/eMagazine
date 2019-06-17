@@ -51,7 +51,7 @@ module.exports = {
     },
 
     delete: id => {
-        return db.delete('posts', id, id);
+        return db.delete('posts', 'postid', id);
     },
 
     loadForHome: () => {
