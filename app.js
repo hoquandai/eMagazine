@@ -87,7 +87,7 @@ app.use('/contact', require('./routes/info/contact.route'));
 app.use('/account', require('./routes/info/account.route'));
 app.use('/user_detail', require('./routes/info/user_detail.route'));
 app.use('/account/profile', require('./routes/info/user_detail.route'));
-
+app.use('/resetpw', require('./routes/info/resetpw.route'));
 
 /// ADMIN
 app.use('/admin/categories', require('./routes/admin/categories.route'));

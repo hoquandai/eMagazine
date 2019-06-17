@@ -19,5 +19,14 @@ module.exports = {
 
     update: (id, entity) => {
         return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', password = '${entity.password}', dayOfBird = '${entity.dayOfBird}', permissions = '${entity.permissions}' where id_User = '${id}';`);
-    }
+    },
+
+    update: entity => {
+        return db.update('users', 'email', entity);
+    },
+
+    getEmails: () => {
+        var query = "select email from users";
+        return db.load(query);
+    },
 };
