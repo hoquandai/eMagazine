@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
             cn[i] = row.cn;
             i++
         });
-        console.log(cn);
+        //console.log(cn);
 
         var posts = postModel.loadForHome();
         posts.then(rows => {
@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
             var view10 = {};
             var new10 = {};
             
-            console.log("HERE");
+            //console.log("HERE");
             
             top3['name'] = 'top3';
             top3['posts'] = rows[0];
@@ -37,7 +37,7 @@ router.get('/', (req, res, next) => {
             entity['view10'] = view10;
             entity['new10'] = new10;
 
-            console.log(entity['top3'].name);
+            //console.log(entity['top3'].name);
             res.render('home', entity);
         }).catch(next)
     }).catch(next);

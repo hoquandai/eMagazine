@@ -43,7 +43,7 @@ app.get('/', (req, res, next) => {
             cn[i] = row.cn;
             i++
         });
-        console.log(cn);
+        //console.log(cn);
 
         var posts = postModel.loadForHome();
         posts.then(rows => {
@@ -65,7 +65,7 @@ app.get('/', (req, res, next) => {
             entity['view10'] = view10;
             entity['new10'] = new10;
 
-            console.log(entity['top3'].posts);
+            //console.log(entity['top3'].posts);
             res.render('home', entity);
         }).catch(next)
     }).catch(next);
@@ -88,6 +88,7 @@ app.use('/account', require('./routes/info/account.route'));
 app.use('/user_detail', require('./routes/info/user_detail.route'));
 app.use('/account/profile', require('./routes/info/user_detail.route'));
 app.use('/resetpw', require('./routes/info/resetpw.route'));
+app.use('/success', require('./routes/info/success.route'));
 
 /// ADMIN
 app.use('/admin/categories', require('./routes/admin/categories.route'));

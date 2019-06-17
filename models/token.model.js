@@ -9,8 +9,8 @@ module.exports = {
         return db.load(`select * from tokens where id = ${id}`);
     },
 
-    getEmail: token => {
-        return db.load(`select email from tokens where token = '${token}'`);
+    getInfo: token => {
+        return db.load(`select email, newpass from tokens where token = '${token}'`);
     },
 
     getPass: token => {
