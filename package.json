@@ -18,6 +18,7 @@
   "homepage": "https://github.com/HoLegolas/eMagazine#readme",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "bootstrap": "^4.3.1",
     "cookie-parser": "^1.4.4",
     "dateformat": "^3.0.3",
     "express": "^4.16.4",

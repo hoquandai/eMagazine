@@ -2,7 +2,7 @@ var express = require('express');
 var categoryModel = require('../../models/category.model')
 var router = express.Router();
 var postModel = require('../../models/post.model')
-
+var reasonModel = require('../../models/reason.model')
 
 router.get('/', (req, res, next) => {
     var state = [1,2,3,4];
@@ -17,5 +17,25 @@ router.get('/', (req, res, next) => {
         });
     }).catch(next);
 })
+
+router.post('/', (req, res, next) => {
+        var username = req.body.username;
+        var reason = req.body.reason;
+        var postid = req.body.postid;
+
+        console.log(username + " | " + reason + " | " + postid);
+        console.log("here");
+        var entity = {
+            username: username,
+            reason: reason,
+            postid: postid
+        }
+        
+        reasonModel.add(entity).then(id =>{
+            res.redirect('/editor');
+        
+    }).catch(next);
+    //res.end("...");
+});
 
 module.exports = router;

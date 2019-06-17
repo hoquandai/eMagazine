@@ -95,10 +95,15 @@ app.use('/admin/details', require('./routes/admin/detail.route'));
 app.use('/admin/posts', require('./routes/admin/posts.route'));
 app.use('/admin/tags', require('./routes/admin/tag.route'));
 app.use('/admin/users', require('./routes/admin/users.route'));
+app.use('/admin/edit', require('./routes/admin/edit.route'));
+app.use('/admin/update', require('./routes/admin/update.route'));
+app.use('/admin/add', require('./routes/admin/add.route'));
+app.use('/admin/upload', require('./routes/admin/upload.route'));
 
 /// EDITOR
 app.use('/editor', require('./routes/editor/index.route'));
 app.use('/editor/post', require('./routes/editor/post.route'));
+app.use('/editor/edit', require('./routes/editor/edit.route'));
 
 /// WRITER
 app.use('/writer/post', require('./routes/writer/post.route'));

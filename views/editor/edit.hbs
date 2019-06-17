@@ -1,0 +1,92 @@
+{{#section 'css'}}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+{{/section}}
+{{#section 'js'}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script>   
+    $(function () {
+      $('#txtdatenew').datetimepicker({
+        format: 'd/m/Y',
+        timepicker: false,
+        mask: true,
+      });
+    })
+    </script>
+{{/section}}
+<form method="POST">
+    {{#each this.post}}
+
+    <div class="form-group">
+        <label for="title">Ngày đăng</label>
+        <textarea class="form-control" name="date" id="date" rows="2" cols="80" readonly>{{format date}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="title">Ngày sẽ đăng lên hệ thống</label>
+        <label for="re-pass"><i class="zmdi zmdi-calendar"></i></label>
+        <input type="text" name="txtdatenew" class="form-control" id="txtdatenew" name="dob">
+    </div>
+
+    <div class="form-group">
+        <label for="title">State</label>
+        <textarea class="form-control" name="state" id="state" rows="2" cols="80" readonly>1</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="category">Chuyên mục</label>
+        <select class="form-control" onchange="getValue(this);" id="categorySelect">
+            <option value="nongsan" selected>Nông sản</option>
+            <option value="haisan">Hải sản</option>
+            <option value="chinhtri">Chính tri</option>
+            <option value="giaoduc">Giáo dục</option>
+        </select>
+        <textarea class="form-control" name="category" id="category" rows="1" cols="80" readonly>nongsan</textarea>
+        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80" readonly>Nông sản</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="tag1">Nhãn 1</label>
+        <textarea class="form-control" name="tag1" id="tag1" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết">{{tag1}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="tag2">Nhãn 2</label>
+        <textarea class="form-control" name="tag2" id="tag2" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết">{{tag2}}</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="tag3">Nhãn 3</label>
+        <textarea class="form-control" name="tag3" id="tag3" rows="2" cols="80"
+            placeholder="Nhập nhãn bài viết">{{tag3}}</textarea>
+    </div>
+
+    {{/each}}
+
+    <button type="submit" class="btn btn-primary">Primary</button>
+    </div>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        //CKEDITOR.replace('title');
+        //CKEDITOR.replace('summary');
+        CKEDITOR.replace('content');
+
+        CKEDITOR.config.height = 150;
+        CKEDITOR.config.extraPlugins = "videoembed";
+        CKEDITOR.config.extraPlugins = "youtube";
+        CKEDITOR.config.entities = false;
+        CKEDITOR.config.basicEntities = false;
+        CKEDITOR.config.entities_latin = false;
+
+        CKEDITOR.instances.category.setReadOnly(true);
+
+
+        function getValue(c) {
+            document.getElementById('category').value = c.value;
+            document.getElementById('catename').value = c.options[c.selectedIndex].text;
+        }
+    </script>
+</form>

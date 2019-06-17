@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
-        res.render('writer/post', {
+        res.render('admin/add', {
             categories: rows
         });
     }).catch(next);
@@ -25,14 +25,14 @@ router.post('/', (req, res, next) => {
         tag3: req.body.tag3,
         catename: req.body.catename,
         date: req.body.date,
-        state: 4
+        state: 2
     }
 
     postModel.add(entity)
         .then(postid => {
             console.log(postid);
-            var cate = req.body.category; 
-            res.render(`writer/upload`,{
+            var cate = req.body.category;
+            res.render(`admin/upload`,{
                 cate: cate,
                 postid: postid
             });
