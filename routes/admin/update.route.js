@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     var p = categoryModel.all();
     p.then(rows => {
         console.log(rows);
-        res.render('editor/edit', {
+        res.render('admin/update', {
             categories: rows
         });
     }).catch(next);
@@ -19,7 +19,7 @@ router.get('/:id', (req, res, next) => {
     var id = req.params.id;
     postModel.single(id).then(rows => {
         console.log("POSTID: " + rows[0].postid);
-        res.render('editor/edit', {
+        res.render('admin/update', {
             post : rows
         });
 
@@ -33,7 +33,7 @@ router.post('/:id', (req, res, next) => {
     var tag2 = req.body.tag2;
     var tag3 = req.body.tag3;
     var date = moment(req.body.txtdatenew, 'DD/MM/YYYY').format('YYYY-MM-DD');
-    var state = 1;
+    var state = 2;
 
     console.log(postid + "|" + category + " | " + tag1 + " | " + tag2 + " | " + tag3 + " | " + date + " | " + state);
     
@@ -44,7 +44,7 @@ router.post('/:id', (req, res, next) => {
         tag2: tag2,
         tag3: tag3,
         date: date,
-        state: 1
+        state: 2
     }
 
     

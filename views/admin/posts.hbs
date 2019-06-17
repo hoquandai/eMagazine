@@ -98,7 +98,6 @@
 				<div class="header-logo">
 					<a href="/home" class="logo"><img src="/img/th16.png" alt="" width="182px" height="274px"></a>
 				</div>
-
 			</div>
 		</div>
 		<!-- /Center Header -->
@@ -132,322 +131,258 @@
 	</header>
 	<!-- /Header -->
 	<!-- SECTION -->
-	<div class="section">
-		<!-- CONTAINER -->
-		<div class="container">
-			<!-- ROW -->
-			<div class="row">
-				<!-- Main Column -->
-				<div class="col-md-12">
-					<!-- section title -->
-					<div class="section-title">
-						<h2 class="title">Bài viết</h2>
-						<button class="title">Xem thêm</button>
-						<!-- tab nav -->
+        <div class="section">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- ROW -->
+                <div class="row">
+                    <!-- Main Column -->
+                    <div class="col-md-12">
+                        <!-- section title -->
+                        <div class="section-title">
+                            <h2 class="title">Đã được duyệt & Chờ xuất bản</h2>
+                            <button class="title">Xem thêm</button>
+                        </div>
+                        <!-- /section title -->
+                        
+                        <!-- Tab content -->
+                        <div class="tab-content">
+                            <!-- tab1 -->
+                            <div id="tab1" class="tab-pane fade in active">
+                                <!-- row -->
+                                <div class="row">
+                                    {{#each this.post0}}
+                                    <!-- Column 1 -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <!-- ARTICLE -->
+                                        <article class="article">
+                                            <div class="article-img">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+                                                </a>
+                                                <ul class="article-info">
+                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
+                                                </ul>
+                                            </div>
+                                             <div class="article-body">
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+                                                <ul class="article-meta">
+                                                <a href="/admin/edit/{{postid}}"><i class="fa fa-print"></i><i> Xuất bản</i></a>
+                                                <a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
+												<a href="/admin/update/{{postid}}"><i class="fa fa-pencil-square-o"></i><i>Cập nhật</i></a>
+                                            </ul>
+                                            </div>
+                                        </article>
+                                        <!-- /ARTICLE -->
+                                    </div>
+                                    {{/each}}
+                                    <!-- /Column 1 -->
+                                </div>
+                                <!-- /row -->
+                            </div>
+                            <!-- /tab1 -->
+                        </div>
+                        <!-- /tab content -->
+                    </div>
+                    <!-- /Main Column -->
+                </div>
+                <!-- /ROW -->
+            </div>
+            <!-- /CONTAINER -->
+        </div>
+        <!-- /SECTION -->
 
-						<!-- /tab nav -->
+        <!-- SECTION -->
+        <div class="section">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- ROW -->
+                <div class="row">
+                    <!-- Main Column -->
+                    <div class="col-md-12">
+                        <!-- section title -->
+                        <div class="section-title">
+                            <h2 class="title">Đã xuất bản</h2>
+                            <button class="title">Xem thêm</button>
+                        </div>
+                        <!-- /section title -->
+                        
+                        <!-- Tab content -->
+                        <div class="tab-content">
+                            <!-- tab1 -->
+                            <div id="tab1" class="tab-pane fade in active">
+                                <!-- row -->
+                                <div class="row">
+                                    {{#each this.post1}}
+                                    <!-- Column 1 -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <!-- ARTICLE -->
+                                        <article class="article">
+                                            <div class="article-img">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+                                                </a>
+                                                <ul class="article-info">
+                                                    <li class="article-type"><i class="fa fa-file-text"></i></li>
+                                                </ul>
+                                            </div>
+                                             <div class="article-body">
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+                                                <ul class="article-meta">
+                                                <a href="#"><i class="fa fa-trash"></i><i>Xoá</i></a>
+												<a href="/admin/update/{{postid}}"><i class="fa fa-pencil-square-o"></i><i>Cập nhật</i></a>
+                                            </ul>
+                                            </div>
+                                            
+                                        </article>
+                                        <!-- /ARTICLE -->
+                                    </div>
+                                    {{/each}}
+                                    <!-- /Column 1 -->
+                                </div>
+                                <!-- /row -->
+                            </div>
+                           
+                        </div>
+                        <!-- /tab content -->
+                    </div>
+                    <!-- /Main Column -->
+                </div>
+                <!-- /ROW -->
+            </div>
+            <!-- /CONTAINER -->
+        </div>
+        <!-- /SECTION -->
+
+        <!-- SECTION -->
+        <div class="section">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- ROW -->
+                <div class="row">
+                    <!-- Main Column -->
+                    <div class="col-md-12">
+                        <!-- section title -->
+                        <div class="section-title">
+                            <h2 class="title">Bị từ chối</h2>
+                            <button class="title">Xem thêm</button>
+                        </div>
+                        <!-- /section title -->
+                        
+                        <!-- Tab content -->
+                        <div class="tab-content">
+                            <!-- tab1 -->
+                            <div id="tab1" class="tab-pane fade in active">
+                                <!-- row -->
+                                <div class="row">
+                                    {{#each this.post2}}
+                                    <!-- Column 1 -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <!-- ARTICLE -->
+                                        <article class="article">
+                                            <div class="article-img">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+                                                </a>
+                                                <ul class="article-info">
+                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="article-body">
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+                                                <ul class="article-meta">
+                                                <a href="/admin/edit/{{postid}}"><i class="fa fa-print"></i><i> Xuất bản</i></a>
+                                                <a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
+												<a href="/admin/update/{{postid}}"><i class="fa fa-pencil-square-o"></i><i>Cập nhật</i></a>
+                                            </ul>
+                                            </div>
+                                        </article>
+                                        <!-- /ARTICLE -->
+                                    </div>
+                                    {{/each}}
+                                    <!-- /Column 1 -->
+                                </div>
+                                <!-- /row -->
+                            </div>
+                            <!-- /tab1 -->
+                        </div>
+                        <!-- /tab content -->
+                    </div>
+                    <!-- /Main Column -->
+                </div>
+                <!-- /ROW -->
+            </div>
+            <!-- /CONTAINER -->
+        </div>
+        <!-- /SECTION -->
+
+        <!-- SECTION -->
+        <div class="section">
+            <!-- CONTAINER -->
+            <div class="container">
+                <!-- ROW -->
+                <div class="row">
+                    <!-- Main Column -->
+                    <div class="col-md-12">
+                        <!-- section title -->
+                        <div class="section-title">
+                            <h2 class="title">Chưa được duyệt</h2>
+                            <button class="title">Xem thêm</button>
+                        </div>
+                        <!-- /section title -->
+                        
+                        <!-- Tab content -->
+                        <div class="tab-content">
+                            <!-- tab1 -->
+                            <div id="tab1" class="tab-pane fade in active">
+                                <!-- row -->
+                                <div class="row">
+                                    {{#each this.post3}}
+                                    <!-- Column 1 -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <!-- ARTICLE -->
+                                        <article class="article">
+                                            <div class="article-img">
+                                                <a href="/post/{{postid}}">
+                                                    <img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+                                                </a>
+                                                <ul class="article-info">
+                                                    <li class="article-type"><i class="fa fa-edit"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="article-body">
+                                                <h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+                                                <ul class="article-meta">
+                                                <a href="/admin/edit/{{postid}}"><i class="fa fa-print"></i><i> Xuất bản</i></a>
+                                                <a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
+												<a href="/admin/update/{{postid}}"><i class="fa fa-pencil-square-o"></i><i>Cập nhật</i></a>
+                                            </ul>
+                                            </div>
+                                        </article>
+                                        <!-- /ARTICLE -->
+                                    </div>
+                                    {{/each}}
+                                    <!-- /Column 1 -->
+                                </div>
+                                <!-- /row -->
+                            </div>
+                            <!-- /tab1 -->
+                        </div>
+                        <!-- /tab content -->
+                    </div>
+
+					<div>
+					<a href="/admin/add">
+						<i class="fa fa-plus"></i><i> Thêm bài viết</i>
+					</a>
 					</div>
-					<!-- /section title -->
-
-					<!-- Tab content -->
-					<div class="tab-content">
-						<!-- tab1 -->
-						<div id="tab1" class="tab-pane fade in active">
-							<!-- row -->
-							<div class="row">
-								<!-- Column 1 -->
-								<div class="col-md-3 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-md-1.jpg" alt="">
-											</a>
-											<ul class="article-info">
-												<li class="article-type">
-													<i class="fa fa-camera"></i>
-												</li>
-											</ul>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 1 -->
-
-								<!-- Column 2 -->
-								<div class="col-md-3 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-md-2.jpg" alt="">
-											</a>
-											<ul class="article-info">
-												<li class="article-type">
-													<i class="fa fa-file-text"></i>
-												</li>
-											</ul>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 2 -->
-
-								<!-- Column 3 -->
-								<div class="col-md-3 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-md-3.jpg" alt="">
-											</a>
-											<ul class="article-info">
-												<li class="article-type">
-													<i class="fa fa-camera"></i>
-												</li>
-											</ul>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 3 -->
-
-								<!-- Column 4 -->
-								<div class="col-md-3 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-md-4.jpg" alt="">
-											</a>
-											<ul class="article-info">
-												<li class="article-type">
-													<i class="fa fa-file-text"></i>
-												</li>
-											</ul>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- Column 4 -->
-							</div>
-							<!-- /row -->
-
-							<!-- row -->
-							<div class="row">
-								<!-- Column 1 -->
-								<div class="col-md-4 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-1.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-2.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 1 -->
-
-								<!-- Column 2 -->
-								<div class="col-md-4 col-sm-6">
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-3.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-4.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 2 -->
-
-								<!-- /Column 3 -->
-								<div class="col-md-4 hidden-sm">
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-5.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-
-									<!-- ARTICLE -->
-									<article class="article widget-article">
-										<div class="article-img">
-											<a href="#">
-												<img src="./img/img-widget-6.jpg" alt="">
-											</a>
-										</div>
-										<div class="article-body">
-											<h4 class="article-title"><a href="#">Duis urbanitas eam in, tempor
-													consequat.</a></h4>
-											<ul class="article-meta">
-												<a href="#"><i class="fa fa-print"></i><i> Xuất bản</i></a>
-												<a href="#"><i class="fa fa-trash"></i><i> Huỷ</i></a>
-											</ul>
-										</div>
-									</article>
-									<!-- /ARTICLE -->
-								</div>
-								<!-- /Column 3 -->
-							</div>
-							<!-- /row -->
-						</div>
-						<!-- /tab1 -->
-						<div>
-							<a href="#">
-								<i class="fa fa-plus"></i><i> Thêm bài viết</i>
-							</a>
-						</div>
-						<div id="tab2" class="tab-pane fade in active">
-
-						</div>
-					</div>
-					<!-- /tab content -->
-				</div>
-				<!-- /Main Column -->
-			</div>
-			<!-- /ROW -->
-		</div>
-		<!-- /CONTAINER -->
-	</div>
-	<!-- /SECTION -->
-	<!-- FOOTER -->
-	<footer id="footer">
-		<!-- Bottom Footer -->
-		<div id="bottom-footer" class="section">
-			<!-- CONTAINER -->
-			<div class="container">
-				<!-- ROW -->
-				<div class="row">
-					<!-- footer links -->
-					<div class="col-md-6 col-md-push-6">
-						<ul class="footer-links">
-							<li><a href="/about">About us</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="/privacy">Privacy</a></li>
-						</ul>
-					</div>
-					<!-- /footer links -->
-
-					<!-- footer copyright -->
-					<div class="col-md-6 col-md-pull-6">
-						<div class="footer-copyright">
-							<span>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;
-								<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-								template is made
-								with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-									target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-						</div>
-					</div>
-					<!-- /footer copyright -->
-				</div>
-				<!-- /ROW -->
-			</div>
-			<!-- /CONTAINER -->
-		</div>
-		<!-- /Bottom Footer -->
-	</footer>
-	<!-- /FOOTER -->
+                    <!-- /Main Column -->
+                </div>
+                <!-- /ROW -->
+            </div>
+            <!-- /CONTAINER -->
+        </div>
+        <!-- /SECTION -->
 	<!-- Back to top -->
 	<div id="back-to-top"></div>
 	<!-- Back to top -->
