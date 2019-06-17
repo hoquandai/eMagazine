@@ -142,31 +142,129 @@
 	<!-- /Header -->
 	<div class="card shadow">
 		<table class="table table-hover">
+			{{#if this.error}}
+			<div class="alert alert-danger" role="alert">
+				Không có giá trị.
+			</div>
+			{{else}}
+			{{#if isUser}}
 			<thead>
 				<tr>
 					<th scope="col" class="text-center">#</th>
-					<th scope="col">Chuyên mục</th>
+					<th scope="col">Users</th>
 					<th scope="col" class="text-right">
-						<a class="btn btn-outline-success" href="/admin/categories/add" role="button">
+						<a class="btn btn-outline-success" href="/admin/users/adduser" role="button">
 							<i class="fa fa-plus" aria-hidden="true"></i>
-							Thêm chuyên mục
+							Thêm User
 						</a>
 					</th>
 				</tr>
 			</thead>
 			<tbody>
-				{{#each this.categories}}
+				{{#each this.user}}
 				<tr>
-					<th scope="row" class="text-center">{{cateid}}</th>
-					<td>{{name}}</td>
+					<th scope="row" class="text-center">{{id_User}}</th>
+					<td>{{username}}</td>
 					<td class="text-right">
-						<a class="btn btn-primary btn-sm" href="/admin/categories/edit/{{cateid}}" role="button">
+						<a class="btn btn-primary btn-sm" href="/admin/users/edit/{{id_User}}" role="button">
 							<i class="fa fa-pencil" aria-hidden="true"></i>
 						</a>
 					</td>
 				</tr>
 				{{/each}}
 			</tbody>
+			{{/if}}
+
+			{{#if isSub}}
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">#</th>
+					<th scope="col">Subscribers</th>
+					<th scope="col">Ngày hết hạn</th>
+					<th>Gia hạn</th>
+					<th scope="col" class="text-right">
+						<a class="btn btn-outline-success" href="/admin/users/addsub" role="button">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							Thêm Subscriber
+						</a>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each this.user}}
+				<tr>
+					<th scope="row" class="text-center">{{id_User}}</th>
+					<td>{{username}}</td>
+					<td>{{HSD}}</td>
+					<td>
+						<form method="POST" action="/admin/users/subscriber/{{id_User}}">
+							<button class="btn btn-primary btn-sm" type="submit">
+								<i class="fa fa-plus" aria-hidden="true"></i>
+							</button>
+						</form>
+					</td>
+					<td class="text-right">
+						<a class="btn btn-primary btn-sm" href="/admin/users/edit/{{id_User}}" role="button">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+			{{/if}}
+
+			{{#if isWriter}}
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">#</th>
+					<th scope="col">Writers</th>
+					<th scope="col" class="text-right">
+						<a class="btn btn-outline-success" href="/admin/users/addwriter" role="button">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							Thêm Writer
+						</a>
+					</th>
+				</tr>
+			</thead>
+			{{#each this.user}}
+			<tr>
+				<th scope="row" class="text-center">{{id_User}}</th>
+				<td>{{username}}</td>
+				<td class="text-right">
+					<a class="btn btn-primary btn-sm" href="/admin/users/edit/{{id_User}}" role="button">
+						<i class="fa fa-pencil" aria-hidden="true"></i>
+					</a>
+				</td>
+			</tr>
+			{{/each}}
+			{{/if}}
+
+			{{#if isEditor}}
+			<thead>
+				<tr>
+					<th scope="col" class="text-center">#</th>
+					<th scope="col">Editors</th>
+					<th scope="col" class="text-right">
+						<a class="btn btn-outline-success" href="/admin/users/addeditor" role="button">
+							<i class="fa fa-plus" aria-hidden="true"></i>
+							Thêm Editor
+						</a>
+					</th>
+				</tr>
+			</thead>
+			{{#each this.user}}
+			<tr>
+				<th scope="row" class="text-center">{{id_User}}</th>
+				<td>{{username}}</td>
+				<td class="text-right">
+					<a class="btn btn-primary btn-sm" href="/admin/users/edit/{{id_User}}" role="button">
+						<i class="fa fa-pencil" aria-hidden="true"></i>
+					</a>
+				</td>
+			</tr>
+			{{/each}}
+			{{/if}}
+			{{/if}}
 		</table>
 	</div>
 
@@ -185,11 +283,11 @@
 					{{else}}
 					<li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
 					{{/if}}
-	
+
 					{{/each}}
 					{{!--<li class="page-item active">
-								<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-							</li>--}}
+							<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+						</li>--}}
 					<li class="page-item">
 						<a class="page-link" href="#">Next</a>
 					</li>
@@ -198,46 +296,6 @@
 		</div>
 	</div>
 
-	<!-- FOOTER -->
-	<footer id="footer">
-		<!-- Bottom Footer -->
-		<div id="bottom-footer" class="section">
-			<!-- CONTAINER -->
-			<div class="container">
-				<!-- ROW -->
-				<div class="row">
-					<!-- footer links -->
-					<div class="col-md-6 col-md-push-6">
-						<ul class="footer-links">
-							<li><a href="/about">About us</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="/privacy">Privacy</a></li>
-						</ul>
-					</div>
-					<!-- /footer links -->
-
-					<!-- footer copyright -->
-					<div class="col-md-6 col-md-pull-6">
-						<div class="footer-copyright">
-							<span>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;
-								<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-								template is made
-								with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
-									target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-						</div>
-					</div>
-					<!-- /footer copyright -->
-				</div>
-				<!-- /ROW -->
-			</div>
-			<!-- /CONTAINER -->
-		</div>
-		<!-- /Bottom Footer -->
-	</footer>
-	<!-- /FOOTER -->
 	<!-- Back to top -->
 	<div id="back-to-top"></div>
 	<!-- Back to top -->

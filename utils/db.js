@@ -10,7 +10,7 @@ var createConnection = () => {
         multipleStatements: true
     });
 }*/
-var createConnection = () => {
+/*var createConnection = () => {
      return mysql.createConnection({
         host: 'localhost',
          port: 3306,
@@ -19,21 +19,17 @@ var createConnection = () => {
          database: 'web-final4',
          multipleStatements: true
      });
- }
-// var createConnection = () => {
-//     return mysql.createConnection({
-//         host: 'localhost',
-//         port: 3306,
-//         user: 'root',
-//         password: 'pai14061998',
-// <<<<<<< HEAD
-//         database: 'a'
-// =======
-//         database: 'emagazine',
-//         multipleStatements: true
-// >>>>>>> 09d6ec858ddb2efc7e6cadd4ed6fa18698072eba
-//     });
-// }
+}*/
+var createConnection = () => {
+    return mysql.createConnection({
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: 'pai14061998',
+        database: 'emz',
+        multipleStatements: true
+    });
+}
 
 
 module.exports = {

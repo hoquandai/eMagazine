@@ -21,12 +21,37 @@ module.exports = {
         return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', password = '${entity.password}', dayOfBird = '${entity.dayOfBird}', permissions = '${entity.permissions}' where id_User = '${id}';`);
     },
 
-    update: entity => {
-        return db.update('users', 'email', entity);
+    sigleByPermissions: permissions => {
+        return db.load(`select * from users where permissions = '${permissions}'`);
     },
 
-    getEmails: () => {
-        var query = "select email from users";
+    updateUser: (id, entity) => {
+        return db.load(`update Users set username = '${entity.username}', email = '${entity.email}' where id_User = '${id}';`)
+    },
+
+    updateWriter: (id, entity) => {
+        return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', pseudonym = '${entity.pseudonym}' where id_User = '${id}';`)
+    },
+
+    updateDate: (id, date) => {
+        return db.load(`update Users set HSD = '${date}' where id_User = '${id}';`)
+    },
+
+    updateEditor: (id, entity) => {
+        return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', category = '${entity.category}' where id_User = '${id}';`)
+    },
+
+    delete: id => {
+        return db.load(`delete from users where id_User = '${id}'`);
+    },
+
+    pageByName: (per, limit, offset) => {
+        var query = `select * from users where permissions = '${per}' limit ${limit} offset ${offset};`
+        return db.load(query);
+    },
+
+    countByName: per => {
+        var query = `select count(*) as total from users where permissions = '${per}';`;
         return db.load(query);
     },
 };

@@ -111,11 +111,20 @@
                         <a href="/home" class="logo"><img src="/img/logo-alt.png" alt=""></a>
                     </div>
                     <ul class="main-nav nav navbar-nav">
-                        <li><a href="/admin/categories">Chuyên mục</a></li>
-                        <li><a href="/admin/tags">Tag</a></li>
-                        <li><a href="/admin/posts">Bài viết</a></li>
-                        <li><a href="/admin/users">Người dùng</a></li>
-                    </ul>
+						<li><a href="/admin/categories">Chuyên mục</a></li>
+						<li><a href="/admin/tags">Tag</a></li>
+						<li><a href="/admin/posts">Bài viết</a></li>
+						<li>
+							<a href="/admin/users" data-toggle="dropdown">Người dùng <span
+									class="fa fa-caret-down"></span></a>
+							<ul class="dropdown-menu" aria-labelledby="dLabel">
+								<li class="dropdown-li"><a href="/admin/users/writer">Writer</a></li>
+								<li class="dropdown-li"><a href="/admin/users/editor">Editor</a></li>
+								<li class="dropdown-li"><a href="/admin/users/subscriber">Subscriber</a></li>
+								<li class="dropdown-li"><a href="/admin/users/user">User</a></li>
+							</ul>
+						</li>
+					</ul>
                 </nav>
                 <div class="button-nav">
                     <button class="search-collapse-btn"><i class="fa fa-search"></i></button>
@@ -134,12 +143,12 @@
     <div class="container">
         <div class="card shadow">
             <h4 class="card-header text-center">
-                Edit Category
+                Edit chuyên mục
             </h4>
             <div class="card-body">
                 {{#if this.error}}
                 <div class="alert alert-danger" role="alert">
-                    Invalid categoryId. <a href="/admin/categories" class="alert-link">Go back</a>.
+                    Không có giá trị. <a href="/admin/categories" class="alert-link">Go back</a>.
                 </div>
                 {{else}}
                 <form method="POST" action="/admin/categories/update">
@@ -149,21 +158,21 @@
                             value="{{this.category.cateid}}">
                     </div>
                     <div class="form-group">
-                        <label for="txtCatName">Category</label>
+                        <label for="txtCatName">Chuyên mục</label>
                         <input type="text" class="form-control" id="txtCatName" name="name" autofocus
                             placeholder="Enter category name" value="{{this.category.name}}">
                     </div>
                     <a class="btn btn-primary" href="/admin/categories" role="button">
                         <i class="fa fa-backward" aria-hidden="true"></i>
-                        List
+                        Danh sách
                     </a>
                     <button type="submit" class="btn btn-outline-danger" formaction="/admin/categories/delete">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        Delete
+                        Xoá
                     </button>
                     <button type="submit" class="btn btn-success">
                         <i class="fa fa-check" aria-hidden="true"></i>
-                        Save
+                        Lưu
                     </button>
                 </form>
                 {{/if}}

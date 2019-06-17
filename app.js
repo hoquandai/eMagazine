@@ -5,13 +5,11 @@ var morgan = require('morgan');
 var app = express();
 var categoryModel = require('./models/category.model')
 var postModel = require('./models/post.model')
-var cookieParser = require('cookie-parser');
 var dateFormat = require('dateformat')
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser('sleepydog'));
 
 app.engine('hbs', exphbs({
     defaultLayout: 'main.hbs',

@@ -4,16 +4,30 @@ var categoryModel = require('../../models/category.model');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-  categoryModel.all()
-    .then(rows => {
-      res.render('admin/vwCategories/categories', {
-        categories: rows,
-        layout: false
-      });
-    }).catch(err => {
+  var page = req.query.page || 1;
+  if (page < 1) page = 1;
+  var limit = 8;
+  var offset = (page - 1) * limit;
+
+  Promise.all([
+    categoryModel.pageByCate(limit, offset),
+    categoryModel.countByCate(),
+  ]).then(([rows, count]) => {
+    var total = count[0].total;
+    var nPages = Math.floor(total / limit);
+    if (total % limit > 0) nPages++; 
+    var pages = []
+    for (i = 1; i <= nPages; i++) {
+      var obj = { value: i, active: i === +page };
+      pages.push(obj);
+    }
+
+    res.render('admin/vwCategories/categories', { categories: rows, pages: pages, layout: false })
+  })
+    .catch(err => {
       console.log(err);
-      res.end('error occured.')
-    });
+      res.end('error occured');
+    })
 })
 
 router.get('/edit/:id', (req, res) => {
@@ -34,7 +48,8 @@ router.get('/edit/:id', (req, res) => {
       });
     } else {
       res.render('admin/vwCategories/edit', {
-        error: true
+        error: true,
+        layout: false
       });
     }
   }).catch(err => {
@@ -44,12 +59,12 @@ router.get('/edit/:id', (req, res) => {
 })
 
 router.get('/add', (req, res) => {
-  res.render('admin/vwCategories/add', {layout: false});
+  res.render('admin/vwCategories/add', { layout: false });
 })
 
 router.post('/add', (req, res) => {
   categoryModel.add(req.body).then(id => {
-    res.render('admin/vwCategories/add', {layout: false});
+    res.render('admin/vwCategories/add', { layout: false });
   }).catch(err => {
     console.log(err);
     res.end('error occured.')

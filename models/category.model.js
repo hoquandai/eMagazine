@@ -39,5 +39,15 @@ module.exports = {
 
     signleById: id => {
         return db.load(`select * from categories where cateid = ${id}`);
+    },
+
+    pageByCate: (limit, offset) => {
+        var query = `select * from categories limit ${limit} offset ${offset};`
+        return db.load(query);
+    },
+
+    countByCate: () => {
+        var query = `select count(*) as total from categories;`;
+        return db.load(query);
     }
 };
