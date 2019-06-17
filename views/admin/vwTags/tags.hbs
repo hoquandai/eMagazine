@@ -259,31 +259,32 @@
 									<th scope="col">Tag1</th>
 									<th scope="col">Tag2</th>
 									<th scope="col">Tag3</th>
+                                    <th scope="col">Edit</th>
 								</tr>
 							</thead>
-							<tbody>
-								{{#each this.post_tag}}
-								<tr>
-									<th scope="row">{{postid}}</th>
-									<td class="tags">{{tag1}}</td>
-									<td class="tags">{{tag2}}</td>
-									<td class="tags">{{tag3}}</td>
-								</tr>
-								{{/each}}
-							</tbody>
+                            <tbody>
+                                {{#each this.post_tag}}
+                                <tr>
+                                    <th scope="row">{{postid}}</th>
+                                    <td class="tags">{{tag1}}</td>
+                                    <td class="tags">{{tag2}}</td>
+                                    <td class="tags">{{tag3}}</td>
+                                    <td class="text-right">
+                                        {{#each ../pages}}
+                                        {{#if active}}
+                                        <a class="btn btn-primary btn-sm" href="/admin/tags/edit/{{../postid}}?page={{value}}" role="button">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </a>
+                                        {{/if}}
+                                        {{/each}}
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
 						</table>
 					</div>
 
 					<div class="foot">
-						<div class="row bigger">
-							<form method="POST">
-								<div class="col-sm-12">
-									<button id="edit" type="button" class="btn btn-dark bigger-btn">Edit</button>
-									<button id="save" type="submit" class="btn btn-primary bigger-btn" hidden>Save</button>
-								</div>
-							</form>
-						</div>
-
 						<div class="row bigger">
 							<div class="col-sm-12">
 								<nav aria-label="...">

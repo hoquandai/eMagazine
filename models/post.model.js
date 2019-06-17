@@ -116,4 +116,14 @@ module.exports = {
         var query = `select * from posts order by date desc limit ${limit};`
         return db.load(query);
     },
+
+    getAllTags: (limit, offset) => {
+        var query = `select postid, tag1, tag2, tag3 from posts limit ${limit} offset ${offset};`;
+        return db.load(query);
+    },
+
+    countPosts: () => {
+        var query = `select count(*) as total from posts;`
+        return db.load(query);
+    },
 };
