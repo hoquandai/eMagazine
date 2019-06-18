@@ -5,12 +5,14 @@ var router = express.Router();
 var fs = require('fs');
 
 router.get('/', (req, res, next) => {
-    var p = categoryModel.all();
+    var p = categoryModel.getSubs();
     p.then(rows => {
-        console.log(rows);
         res.render('writer/post', {
-            categories: rows,
-            layout: false
+            maincate: rows[0],
+            subcate1: rows[1],
+            subcate2: rows[2],
+            subcate3: rows[3],
+            subcate4: rows[4],
         });
     }).catch(next);
 })

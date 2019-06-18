@@ -153,14 +153,63 @@
                 {{else}}
                 <form method="POST" action="/admin/categories/update">
                     <div class="form-group">
-                        <label for="txtCatID">#</label>
+                        <label for="txtCatID">#CateID</label>
                         <input readonly type="text" class="form-control" id="txtCatID" name="cateid"
                             value="{{this.category.cateid}}">
                     </div>
                     <div class="form-group">
-                        <label for="txtCatName">Chuyên mục</label>
+                        <label for="txtCatName">Catgory</label>
                         <input type="text" class="form-control" id="txtCatName" name="name" autofocus
                             placeholder="Enter category name" value="{{this.category.name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="txLink">Category Path</label>
+                        <input type="text" class="form-control" id="txLink" name="link" autofocus required pattern="[a-zA-Z0-9/]+"
+                            placeholder="/reader/category/[catename]" value="{{this.category.link}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="txtCatName1">Subcate1 Name</label>
+                        <input type="text" class="form-control" id="txtCatName1" name="subcate1" autofocus
+                            placeholder="Enter sub-category1 name" value="{{this.category.subcate1}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCatLink1">Subcate1 Path</label>
+                        <input type="text" class="form-control" id="txtCatLink1" name="link1" autofocus pattern="[a-zA-Z0-9/]+"
+                            placeholder="/reader/category/[subcatename]" value="{{this.category.link1}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="txtCatName2">Subcate2 Name</label>
+                        <input type="text" class="form-control" id="txtCatName2" name="subcate2" autofocus
+                            placeholder="Enter sub-category2 name" value="{{this.category.subcate2}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCatLink2">Subcate2 Path</label>
+                        <input type="text" class="form-control" id="txtCatLink2" name="link2" autofocus pattern="[a-zA-Z0-9/]+"
+                            placeholder="/reader/category/[subcatename]" value="{{this.category.link2}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="txtCatName3">Subcate3 Name</label>
+                        <input type="text" class="form-control" id="txtCatName3" name="subcate3" autofocus
+                            placeholder="Enter sub-category3 name" value="{{this.category.subcate3}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCatLink3">Subcate3 Path</label>
+                        <input type="text" class="form-control" id="txtCatLink3" name="link3" autofocus  pattern="[a-zA-Z0-9/]+"
+                            placeholder="/reader/category/[subcatename]" value="{{this.category.link3}}">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="txtCatName4">Subcate4 Name</label>
+                        <input type="text" class="form-control" id="txtCatName4" name="subcate4" autofocus
+                            placeholder="Enter sub-category4 name" value="{{this.category.subcate4}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCatLink4">Subcate4 Path</label>
+                        <input type="text" class="form-control" id="txtCatLink4" name="link4" autofocus  pattern="[a-zA-Z0-9/]+"
+                            placeholder="/reader/category/[subcatename]" value="{{this.category.link4}}">
                     </div>
                     <a class="btn btn-primary" href="/admin/categories" role="button">
                         <i class="fa fa-backward" aria-hidden="true"></i>

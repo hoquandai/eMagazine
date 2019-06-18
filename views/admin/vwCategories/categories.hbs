@@ -153,8 +153,12 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th scope="col" class="text-center">#</th>
-					<th scope="col">Chuyên mục</th>
+					<th scope="col" class="text-center">#CateID</th>
+					<th scope="col">Category</th>
+					<th scope="col">Subcate1</th>
+					<th scope="col">Subcate2</th>
+					<th scope="col">Subcate3</th>
+					<th scope="col">Subcate4</th>
 					<th scope="col" class="text-right">
 						<a class="btn btn-outline-success" href="/admin/categories/add" role="button">
 							<i class="fa fa-plus" aria-hidden="true"></i>
@@ -167,7 +171,11 @@
 				{{#each this.categories}}
 				<tr>
 					<th scope="row" class="text-center">{{cateid}}</th>
-					<td>{{name}}</td>
+					<td>{{name}} <br> {{link}}</td>
+					<td>{{subcate1}} <br> {{link1}}</td>
+					<td>{{subcate2}} <br> {{link2}}</td>
+					<td>{{subcate3}} <br> {{link3}}</td>
+					<td>{{subcate4}} <br> {{link4}}</td>
 					<td class="text-right">
 						<a class="btn btn-primary btn-sm" href="/admin/categories/edit/{{cateid}}" role="button">
 							<i class="fa fa-pencil" aria-hidden="true"></i>

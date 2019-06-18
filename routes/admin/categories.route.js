@@ -63,16 +63,70 @@ router.get('/add', (req, res) => {
 })
 
 router.post('/add', (req, res) => {
-  categoryModel.add(req.body).then(id => {
-    res.render('admin/vwCategories/add', { layout: false });
+  var cateid = req.body.cateid;
+  var name = req.body.name;
+  var link = req.body.link;
+  var subcate1 = req.body.subcate1;
+  var link1 = req.body.link1;
+  var subcate2 = req.body.subcate2;
+  var link2 = req.body.link2;
+  var subcate3 = req.body.subcate3;
+  var link3 = req.body.link3;
+  var subcate4 = req.body.subcate4;
+  var link4 = req.body.link4;
+
+  var entity = {}
+  var catenames = {}
+
+  if (cateid != "") { entity['cateid'] = cateid};
+  if (link != "") { entity['link'] = link; catenames['catename'] = link; categoryModel.addCateName(catenames)};
+  if (subcate1 != "") { entity['subcate1'] = subcate1};
+  if (name != "") { entity['name'] = name};
+  if (link1 != "") { entity['link1'] = link1 ; catenames['catename'] = link1; categoryModel.addCateName(catenames)};
+  if (subcate2 != "") { entity['subcate2'] = subcate2};
+  if (link2 != "") { entity['link2'] = link2; catenames['catename'] = link2; categoryModel.addCateName(catenames)};
+  if (subcate3 != "") { entity['subcate3'] = subcate3};
+  if (link3 != "") { entity['link3'] = link3; catenames['catename'] = link3; categoryModel.addCateName(catenames)};
+  if (subcate4 != "") { entity['subcate4'] = subcate4};
+  if (link4 != "") { entity['link4'] = link4; catenames['catename'] = link4; categoryModel.addCateName(catenames)};
+
+  
+  categoryModel.add(entity).then(id => {
+    res.render('admin/vwCategories/add', {layout: false});
   }).catch(err => {
     console.log(err);
-    res.end('error occured.')
+    res.end('[!]error occured.\r[!] duplicated link found')
   });
 })
 
 router.post('/update', (req, res) => {
-  categoryModel.update(req.body).then(n => {
+  var cateid = req.body.cateid;
+  var name = req.body.name;
+  var link = req.body.link;
+  var subcate1 = req.body.subcate1;
+  var link1 = req.body.link1;
+  var subcate2 = req.body.subcate2;
+  var link2 = req.body.link2;
+  var subcate3 = req.body.subcate3;
+  var link3 = req.body.link3;
+  var subcate4 = req.body.subcate4;
+  var link4 = req.body.link4;
+
+  var entity = {}
+
+  if (cateid != "") { entity['cateid'] = cateid};
+  if (link != "") { entity['link'] = link; catenames['catename'] = link; categoryModel.addCateName(catenames)};
+  if (subcate1 != "") { entity['subcate1'] = subcate1};
+  if (name != "") { entity['name'] = name};
+  if (link1 != "") { entity['link1'] = link1; catenames['catename'] = link1; categoryModel.addCateName(catenames)};
+  if (subcate2 != "") { entity['subcate2'] = subcate2};
+  if (link2 != "") { entity['link2'] = link2; catenames['catename'] = link2; categoryModel.addCateName(catenames)};
+  if (subcate3 != "") { entity['subcate3'] = subcate3};
+  if (link3 != "") { entity['link3'] = link3; catenames['catename'] = link3; categoryModel.addCateName(catenames)};
+  if (subcate4 != "") { entity['subcate4'] = subcate4; };
+  if (link4 != "") { entity['link4'] = link4; catenames['catename'] = link4; categoryModel.addCateName(catenames)};
+
+  categoryModel.update(entity).then(n => {
     res.redirect('/admin/categories');
   }).catch(err => {
     console.log(err);
