@@ -6,23 +6,39 @@ var router = express.Router();
 var fs = require('fs');
 
 router.get('/', (req, res, next) => {
-    var p = categoryModel.all();
+    var p = categoryModel.getSubs();
     p.then(rows => {
         console.log(rows);
         res.render('admin/edit', {
-            categories: rows
+            maincate: rows[0],
+            subcate1: rows[1],
+            subcate2: rows[2],
+            subcate3: rows[3],
+            subcate4: rows[4]
         });
     }).catch(next);
 })
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
-    postModel.single(id).then(rows => {
-        console.log("POSTID: " + rows[0].postid);
-        res.render('admin/edit', {
-            post : rows
-        });
+    
+    Promise.all([
+        postModel.single(id),
+        categoryModel.getSubs(),
 
+        //postModel.update(post_entity),
+    ]).then(([post, catenames]) => {
+        console.log("cabname" + catenames[0].name);
+        
+        res.render('admin/edit',{
+            post: post,
+            maincate: catenames[0],
+            subcate1: catenames[1],
+            subcate2: catenames[2],
+            subcate3: catenames[3],
+            subcate4: catenames[4]
+        })
+        
     }).catch(next);
 })
 

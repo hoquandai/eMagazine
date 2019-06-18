@@ -1,85 +1,41 @@
-<form method="POST">
-    <div class="form-group">
-        <label for="title">Ngày đăng</label>
-        <textarea class="form-control" name="date" id="date" rows="2" cols="80" readonly></textarea>
-    </div>
-    <div class="form-group">
-        <label for="title">Tiêu đề</label>
-        <textarea class="form-control" name="title" id="title" rows="2" cols="80" placeholder="Nhập tiêu đề"></textarea>
-    </div>
+<!DOCTYPE html>
+<html lang=en>
 
-    <div class="form-group">
-        <label for="summary">Tóm tắt</label>
-        <textarea class="form-control" name="summary" id="summary" rows="10" cols="80"
-            placeholder="Nhập nội dung tóm tắt"></textarea>
-    </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <div class="form-group">
-        <label for="content">Nội dung</label>
-        <textarea class="form-control" name="content" id="content" rows="10" cols="80"
-            placeholder="Nhập nội dung chính bài viết"></textarea>
-    </div>
+    <title>Báo Điện Tử TH16-News</title>
 
-    <div class="form-group">
-        <label for="category">Chuyên mục</label>
-        <select class="form-control" onchange="getValue(this);" id="categorySelect">
-            <option value="nongsan" selected>Nông sản</option>
-            <option value="haisan">Hải sản</option>
-            <option value="chinhtri">Chính tri</option>
-            <option value="giaoduc">Giáo dục</option>
-        </select>
-        <textarea class="form-control" name="category" id="category" rows="1" cols="80" readonly>nongsan</textarea>
-        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80" readonly>Nông sản</textarea>
-    </div>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700%7CLato:300,400" rel="stylesheet">
 
-    <div class="form-group">
-        <label for="tag1">Nhãn 1</label>
-        <textarea class="form-control" name="tag1" id="tag1" rows="2" cols="80"
-            placeholder="Nhập nhãn bài viết"></textarea>
-    </div>
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
 
-    <div class="form-group">
-        <label for="tag2">Nhãn 2</label>
-        <textarea class="form-control" name="tag2" id="tag2" rows="2" cols="80"
-            placeholder="Nhập nhãn bài viết"></textarea>
-    </div>
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="/css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
 
-    <div class="form-group">
-        <label for="tag3">Nhãn 3</label>
-        <textarea class="form-control" name="tag3" id="tag3" rows="2" cols="80"
-            placeholder="Nhập nhãn bài viết"></textarea>
-    </div>
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/administrator_category.css">
+    <script src="/ckeditor/ckeditor.js"></script>
 
 
-    <button type="submit" class="btn btn-primary">Primary</button>
-    </div>
 
-    <script>
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        //CKEDITOR.replace('title');
-        //CKEDITOR.replace('summary');
-        CKEDITOR.replace('content');
-
-        CKEDITOR.config.height = 150;
-        CKEDITOR.config.extraPlugins = "videoembed";
-        CKEDITOR.config.extraPlugins = "youtube";
-        CKEDITOR.config.entities = false;
-        CKEDITOR.config.basicEntities = false;
-        CKEDITOR.config.entities_latin = false;
-
-        CKEDITOR.instances.category.setReadOnly(true);
-
-
-        function getValue(c) {
-            document.getElementById('category').value = c.value;
-            document.getElementById('catename').value = c.options[c.selectedIndex].text;
-
-            loadDate();
-            
-            //c.options[c.selectedIndex].text
-        }
-
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+     <script>
         function loadDate() {
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
@@ -89,5 +45,218 @@
             today = yyyy + '-' + mm + '-' + dd;
             document.getElementById('date').value = today;
         }
+
+        window.onload = loadDate;
     </script>
-</form>
+</head>
+
+<body>
+    <header id="header">
+        <!-- Top Header -->
+        <div id="top-header">
+            <div class="container">
+                <div class="header-links">
+                    <ul>
+                        <li><a href="/about">About us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+
+                        <li><a href="/privacy">Privacy</a></li>
+                        <li>
+                            <form id="frmSignout" action="/account/logout" method="POST"></form>
+                        </li>
+                        {{#if isAuthenticated}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hi, <b>{{authUser.username}}</b>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/account/profile">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: $('#frmSignout').submit();">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                    Sign Out
+                                </a>
+                            </div>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                        <li><a href="/account/signup"><i class="fa fa-user-plus"></i> SignUp</a></li>
+                        </li>
+                        <li class="nav-item">
+                        <li><a href="/account/login"><i class="fa fa-sign-in"></i> LogIn</a></li>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <div class="header-social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Top Header -->
+
+        <!-- Center Header -->
+        <div id="center-header">
+            <div class="container">
+                <div class="header-logo">
+                    <a href="/home" class="logo"><img src="/img/th16.png" alt="" width="182px" height="274px"></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- /Center Header -->
+
+        <!-- Nav Header -->
+        <div id="nav-header">
+            <div class="container">
+                <nav id="main-nav">
+                    <div class="nav-logo">
+                        <a href="/home" class="logo"><img src="/img/logo-alt.png" alt=""></a>
+                    </div>
+                    <ul class="main-nav nav navbar-nav">
+                        <li><a href="/admin/categories">Chuyên mục</a></li>
+                        <li><a href="/admin/tags">Tag</a></li>
+                        <li><a href="/admin/posts">Bài viết</a></li>
+                        <li>
+                            <a href="/admin/users" data-toggle="dropdown">Người dùng <span
+                                    class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li class="dropdown-li"><a href="/admin/users/writer">Writer</a></li>
+                                <li class="dropdown-li"><a href="/admin/users/editor">Editor</a></li>
+                                <li class="dropdown-li"><a href="/admin/users/subscriber">Subscriber</a></li>
+                                <li class="dropdown-li"><a href="/admin/users/user">User</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/editor">Editor</a></li>
+                        <li>
+                            <a href="#" data-toggle="dropdown">Writer <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li class="dropdown-li"><a href="/writer/post">Post</a></li>
+                                <li class="dropdown-li"><a href="/writer/posted">List</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="button-nav">
+                    <button class="search-collapse-btn"><i class="fa fa-search"></i></button>
+                    <button class="nav-collapse-btn"><i class="fa fa-bars"></i></button>
+                    <div class="search-form">
+                        <form method="POST">
+                            <input id="searchString" class="input" type="text" name="search" placeholder="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Nav Header -->
+    </header>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Ngày đăng</label>
+            <textarea class="form-control" name="date" id="date" rows="2" cols="80" readonly></textarea>
+        </div>
+        <div class="form-group">
+            <label for="title">Tiêu đề</label>
+            <textarea class="form-control" name="title" id="title" rows="2" cols="80"
+                placeholder="Nhập tiêu đề"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="summary">Tóm tắt</label>
+            <textarea class="form-control" name="summary" id="summary" rows="10" cols="80"
+                placeholder="Nhập nội dung tóm tắt"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Nội dung</label>
+            <textarea class="form-control" name="content" id="content" rows="10" cols="80"
+                placeholder="Nhập nội dung chính bài viết"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Chuyên mục</label>
+            <select class="form-control" onchange="getValue(this);" id="categorySelect">
+             {{#each this.maincate}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each this.subcate1}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each this.subcate2}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each this.subcate3}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each this.subcate4}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+        </select>
+        <textarea class="form-control" name="category" id="category" rows="1" cols="80"  style="display:none;">nongsan</textarea>
+        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80"  style="display:none;">Nông sản</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tag1">Nhãn 1</label>
+            <textarea class="form-control" name="tag1" id="tag1" rows="2" cols="80"
+                placeholder="Nhập nhãn bài viết"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tag2">Nhãn 2</label>
+            <textarea class="form-control" name="tag2" id="tag2" rows="2" cols="80"
+                placeholder="Nhập nhãn bài viết"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tag3">Nhãn 3</label>
+            <textarea class="form-control" name="tag3" id="tag3" rows="2" cols="80"
+                placeholder="Nhập nhãn bài viết"></textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Primary</button>
+        </div>
+
+        <script>
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            //CKEDITOR.replace('title');
+            //CKEDITOR.replace('summary');
+            CKEDITOR.replace('content');
+
+            CKEDITOR.config.height = 150;
+            CKEDITOR.config.extraPlugins = "videoembed";
+            CKEDITOR.config.extraPlugins = "youtube";
+            CKEDITOR.config.entities = false;
+            CKEDITOR.config.basicEntities = false;
+            CKEDITOR.config.entities_latin = false;
+
+            CKEDITOR.instances.category.setReadOnly(true);
+
+
+            function getValue(c) {
+                document.getElementById('category').value = c.value;
+                document.getElementById('catename').value = c.options[c.selectedIndex].text;
+            }
+        </script>
+    </form>
+    <!-- jQuery Plugins -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

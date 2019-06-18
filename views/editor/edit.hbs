@@ -13,6 +13,19 @@
       });
     })
     </script>
+    <script>
+        function loadDate() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            document.getElementById('date').value = today;
+        }
+
+        window.onload = loadDate;
+    </script>
 {{/section}}
 <form method="POST">
     {{#each this.post}}
@@ -36,13 +49,24 @@
     <div class="form-group">
         <label for="category">Chuyên mục</label>
         <select class="form-control" onchange="getValue(this);" id="categorySelect">
-            <option value="nongsan" selected>Nông sản</option>
-            <option value="haisan">Hải sản</option>
-            <option value="chinhtri">Chính tri</option>
-            <option value="giaoduc">Giáo dục</option>
+            {{#each ../maincate}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each ../subcate1}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each ../subcate2}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each ../subcate3}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
+             {{#each ../subcate4}}
+             {{#if name}}<option value="{{path}}">{{name}}</option>{{/if}}
+             {{/each}}
         </select>
-        <textarea class="form-control" name="category" id="category" rows="1" cols="80" readonly>nongsan</textarea>
-        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80" readonly>Nông sản</textarea>
+        <textarea class="form-control" name="category" id="category" rows="1" cols="80" style="display: none;" readonly>nongsan</textarea>
+        <textarea class="form-control" name="catename" id="catename" rows="1" cols="80" style="display: none;" readonly>Nông sản</textarea>
     </div>
 
     <div class="form-group">

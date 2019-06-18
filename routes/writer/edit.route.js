@@ -13,19 +13,31 @@ router.get('/', (req, res, next) => {
             subcate1: rows[1],
             subcate2: rows[2],
             subcate3: rows[3],
-            subcate4: rows[4],
+            subcate4: rows[4]
         });
     }).catch(next);
 })
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
-    postModel.single(id).then(rows => {
-        console.log("POSTID: " + rows[0].postid);
-        res.render('writer/edit', {
-            post : rows
-        });
+    
+    Promise.all([
+        postModel.single(id),
+        categoryModel.getSubs(),
 
+        //postModel.update(post_entity),
+    ]).then(([post, catenames]) => {
+        console.log("cabname" + catenames[0].name);
+
+        res.render('writer/edit',{
+            post: post,
+            maincate: catenames[0],
+            subcate1: catenames[1],
+            subcate2: catenames[2],
+            subcate3: catenames[3],
+            subcate4: catenames[4]
+        })
+        
     }).catch(next);
 })
 

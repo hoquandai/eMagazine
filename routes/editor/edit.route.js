@@ -6,23 +6,39 @@ var router = express.Router();
 var fs = require('fs');
 
 router.get('/', (req, res, next) => {
-    var p = categoryModel.all();
+    var p = categoryModel.getSubs();
     p.then(rows => {
         console.log(rows);
         res.render('editor/edit', {
-            categories: rows
+            maincate: rows[0],
+            subcate1: rows[1],
+            subcate2: rows[2],
+            subcate3: rows[3],
+            subcate4: rows[4]
         });
     }).catch(next);
 })
 
 router.get('/:id', (req, res, next) => {
     var id = req.params.id;
-    postModel.single(id).then(rows => {
-        console.log("POSTID: " + rows[0].postid);
-        res.render('editor/edit', {
-            post : rows
-        });
+    
+    Promise.all([
+        postModel.single(id),
+        categoryModel.getSubs(),
 
+        //postModel.update(post_entity),
+    ]).then(([post, catenames]) => {
+        console.log("cabname" + catenames[0].name);
+        
+        res.render('editor/edit',{
+            post: post,
+            maincate: catenames[0],
+            subcate1: catenames[1],
+            subcate2: catenames[2],
+            subcate3: catenames[3],
+            subcate4: catenames[4]
+        })
+        
     }).catch(next);
 })
 
@@ -33,7 +49,7 @@ router.post('/:id', (req, res, next) => {
     var tag2 = req.body.tag2;
     var tag3 = req.body.tag3;
     var date = moment(req.body.txtdatenew, 'DD/MM/YYYY').format('YYYY-MM-DD');
-    var state = 2;
+    var state = 1;
 
     console.log(postid + "|" + category + " | " + tag1 + " | " + tag2 + " | " + tag3 + " | " + date + " | " + state);
     
@@ -44,7 +60,7 @@ router.post('/:id', (req, res, next) => {
         tag2: tag2,
         tag3: tag3,
         date: date,
-        state: 2
+        state: 1
     }
 
     

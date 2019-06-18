@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 
+/*
 var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
@@ -9,8 +10,8 @@ var createConnection = () => {
         database: 'emagazine',
         multipleStatements: true
     });
-}
-/*
+}*/
+
 var createConnection = () => {
      return mysql.createConnection({
         host: 'localhost',
