@@ -29,8 +29,10 @@ router.post('/', (req, res, next) => {
         tag3: req.body.tag3,
         catename: req.body.catename,
         date: req.body.date,
-        state: 4
+        state: 4,
     }
+
+    if (req.body.writer) { entity['writer'] = req.body.writer; }
 
     postModel.add(entity)
         .then(postid => {
