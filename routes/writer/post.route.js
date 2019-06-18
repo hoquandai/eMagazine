@@ -13,6 +13,7 @@ router.get('/', (req, res, next) => {
             subcate2: rows[2],
             subcate3: rows[3],
             subcate4: rows[4],
+            layout: false,
         });
     }).catch(next);
 })

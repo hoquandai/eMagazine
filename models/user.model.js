@@ -21,6 +21,10 @@ module.exports = {
         return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', password = '${entity.password}', dayOfBird = '${entity.dayOfBird}', permissions = '${entity.permissions}' where id_User = '${id}';`);
     },
 
+    update: entity => {
+        return db.update('users', 'email', entity);
+    },
+
     sigleByPermissions: permissions => {
         return db.load(`select * from users where permissions = '${permissions}'`);
     },
@@ -54,4 +58,9 @@ module.exports = {
         var query = `select count(*) as total from users where permissions = '${per}';`;
         return db.load(query);
     },
+
+    getEmails: () => {
+        var query = `select email from users`;
+        return db.load(query);
+    }
 };
