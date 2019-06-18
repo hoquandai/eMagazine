@@ -29,6 +29,12 @@
     </script>
 {{/section}}
 <form method="POST">
+    {{#if authUser.permissions}}
+        <div class="form-group">
+            <label for="writer">Người đăng</label>
+            <textarea class="form-control" name="writer" id="writer" rows="2" cols="80" readonly>{{authUser.id_User}}</textarea>
+        </div>
+    {{/if}}
     {{#each this.post}}
 
     <div class="form-group">

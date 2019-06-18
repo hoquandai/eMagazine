@@ -19,4 +19,19 @@ router.get('/', (req, res, next) => {
     }).catch(next);
 })
 
+router.get('/:id', (req, res, next) => {
+    var writerid = req.params.id;
+    var states = [1,2,3,4];
+    var posts = postModel.postByWriter(states, writerid);
+    posts.then(rows => {
+        console.log(rows);
+        res.render('writer/posted', {
+            post0 : rows[0],
+            post1 : rows[1],
+            post2 : rows[2],
+            post3 : rows[3],
+            layout: false
+        });
+    }).catch(next);
+})
 module.exports = router;

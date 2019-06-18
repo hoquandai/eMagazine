@@ -68,7 +68,7 @@ router.post('/:id', (req, res, next) => {
         state: state
     }
 
-    
+    if (req.body.writer) {entity['writer'] = req.body.writer;}
     postModel.update(entity)
         .then(postid => {
             console.log("ID" + postid);

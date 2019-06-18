@@ -154,4 +154,14 @@ module.exports = {
         var query = `SELECT count(*) as total FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}');`
         return db.load(query);
     },
+
+    postByWriter: (states, writerid) => {
+        //console.log(catenames);
+        var query = ``;
+        states.forEach(state => {
+            //console.log(catename);
+            query += `select * from posts where state = N'${state}' and writer = ${writerid};`;
+        });
+        return db.load(query);
+    },
 };
