@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
     var postid = req.body.postid;
     console.log("POSTID: " + postid);
     postModel.delete(postid);
-        res.redirect('/admin/posts');
+    res.redirect('/admin/posts');
 
 })
 

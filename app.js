@@ -108,6 +108,7 @@ app.use('/editor/edit', require('./routes/editor/edit.route'));
 app.use('/writer/post', require('./routes/writer/post.route'));
 app.use('/writer/posted', require('./routes/writer/posted.route'));
 app.use('/writer/upload', require('./routes/writer/upload.route'));
+app.use('/writer/edit', require('./routes/writer/edit.route'))
 /// POST
 app.use('/post', require('./routes/post.route'));
 

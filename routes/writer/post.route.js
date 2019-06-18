@@ -9,7 +9,8 @@ router.get('/', (req, res, next) => {
     p.then(rows => {
         console.log(rows);
         res.render('writer/post', {
-            categories: rows
+            categories: rows,
+            layout: false
         });
     }).catch(next);
 })

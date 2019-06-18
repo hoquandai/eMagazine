@@ -33,7 +33,7 @@ router.post('/:id', (req, res, next) => {
     var tag2 = req.body.tag2;
     var tag3 = req.body.tag3;
     var date = moment(req.body.txtdatenew, 'DD/MM/YYYY').format('YYYY-MM-DD');
-    var state = 1;
+    var state = 2;
 
     console.log(postid + "|" + category + " | " + tag1 + " | " + tag2 + " | " + tag3 + " | " + date + " | " + state);
     
@@ -44,7 +44,7 @@ router.post('/:id', (req, res, next) => {
         tag2: tag2,
         tag3: tag3,
         date: date,
-        state: 1
+        state: 2
     }
 
     

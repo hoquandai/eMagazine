@@ -10,16 +10,17 @@ var createConnection = () => {
         multipleStatements: true
     });
 }*/
-/*var createConnection = () => {
+var createConnection = () => {
      return mysql.createConnection({
         host: 'localhost',
          port: 3306,
          user: 'root',
          password: 'MyNewPass',
-         database: 'web-final4',
+         database: 'web-final5',
          multipleStatements: true
      });
-}*/
+}
+/*
 var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
@@ -29,7 +30,7 @@ var createConnection = () => {
         database: 'emz',
         multipleStatements: true
     });
-}
+}*/
 
 
 module.exports = {

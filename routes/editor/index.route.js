@@ -13,7 +13,8 @@ router.get('/', (req, res, next) => {
             post0 : rows[0],
             post1 : rows[1],
             post2 : rows[2],
-            post3 : rows[3]
+            post3 : rows[3],
+            layout : false
         });
     }).catch(next);
 })
