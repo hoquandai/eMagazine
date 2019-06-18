@@ -36,7 +36,8 @@
 					<div id="all" class="tab-pane fade in active post">
 						<!-- row -->
 						<div class="row post">
-							{{#if isAuthenticated}}
+							
+							{{#if authUser.permissions}}
 							{{#each this.posts}}
 							<!-- Column 1 -->
 								<div class="col-md-3 col-sm-6">
@@ -62,6 +63,7 @@
 							</div>
 							<!-- /Column 1 -->
 							{{/each}}
+							
 							{{else}}
 							{{#each this.posts}}
 							{{#if premium}}
