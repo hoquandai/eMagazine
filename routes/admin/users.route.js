@@ -154,7 +154,12 @@ router.get('/subscriber', (req, res) => {
                 ])
                     .then(([value, count]) => {
                         value.forEach(user => {
-                            user.HSD = moment(user.HSD).format('YYYY-MM-DD');
+                            if(moment(user.HSD).isAfter(moment())){
+                                user.HSD = moment(user.HSD).format('YYYY-MM-DD');
+                            } else {
+                                user.permissions = 0;
+                                userModel.updatePer(user.id_User);
+                            }
                         });
 
                         var total = count[0].total;
@@ -450,6 +455,23 @@ router.post('/deleteeditor', (req, res) => {
 router.post('/deletesub', (req, res) => {
     userModel.delete(req.body.id_User).then(n => {
         res.redirect('/admin/users/subscriber');
+    }).catch(err => {
+        console.log(err);
+        res.end('error occured.')
+    });
+})
+
+router.post('/upgrade/:id', (req, res) => {
+    var id = req.params.id;
+    userModel.signle(id).then(rows => {
+        var newDate = rows[0].HSD;
+        newDate = moment(moment().add(7, 'd')).format('YYYY-MM-DD');
+        userModel.updatePermissions(id, newDate).then(n =>{
+            res.redirect('/admin/users/user');
+        }).catch(err => {
+            console.log(err);
+            res.end('error occured.')
+        });
     }).catch(err => {
         console.log(err);
         res.end('error occured.')

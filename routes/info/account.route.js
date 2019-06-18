@@ -71,6 +71,7 @@ router.post('/login', (req, res, next) => {
 
 router.get('/profile', auth, (req, res, next) => {
     userModel.signle(res.locals.authUser.id_User).then(value => {
+        value[0].dayOfBird = moment(value[0].dayOfBird).format('YYYY-MM-DD');
         res.render('info/user_detail', {layout: false, user: value});
     })
 })

@@ -140,6 +140,7 @@
         <!-- /Nav Header -->
     </header>
     <!-- /Header -->
+    
     <div class="container">
         <div class="card shadow">
             <h4 class="card-header text-center">
@@ -173,6 +174,10 @@
                         <i class="fa fa-backward" aria-hidden="true"></i>
                         Danh sách
                     </a>
+                    <button type="submit" class="btn btn-info" formaction="/admin/users/upgrade/{{this.user.id_User}}">
+                        <i class="fa fa-level-up" aria-hidden="true"></i>
+                        Nâng cấp lên subscriber
+                    </button>
                     <button type="submit" class="btn btn-outline-danger" formaction="/admin/users/deleteuser">
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                         Xoá
