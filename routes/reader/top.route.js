@@ -6,13 +6,44 @@ var router = express.Router();
 
 router.get('/', (req, res, next) => {
     var cn = [];
-    var catenames = categoryModel.catenames();
+    var catenames = categoryModel.getCateName();
     catenames.then(rows => {
         var i = 0;
-        rows.forEach(row => {
-            cn[i] = row.cn;
-            i++
-        });
+        if(rows[0].length > 0) {
+            rows[0].forEach(row => {
+                cn[i] = row.catename;
+                i++
+            });
+        }
+        
+        if (rows[1].length > 0) {
+            rows[1].forEach(row => {
+                cn[i] = row.catename;
+                i++
+            });
+        }
+        
+        if (rows[2].length > 0) {
+            rows[2].forEach(row => {
+                cn[i] = row.catename;
+                i++
+            });
+        }
+        
+        if(rows[3].length > 0) {
+            rows[3].forEach(row => {
+                cn[i] = row.catename;
+                i++
+            });
+        }
+        
+        if (rows[4].length > 0) {
+            rows[4].forEach(row => {
+                cn[i] = row.catename;
+                i++
+            });
+        }
+        
         console.log(cn);
 
         var posts = postModel.topByCate(cn);

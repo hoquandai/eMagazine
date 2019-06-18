@@ -62,5 +62,14 @@ module.exports = {
      
     addCateName: entity => {
         return db.add('catenames', entity);
-    }
+    },
+
+    getCateName: () => {
+        var query = "select substr(link, 18) as catename from categories where subcate1 is null and subcate2 is null and subcate3 is null and subcate4 is null and cateid not in(1,2,3);";
+        query += "select substr(link1, 18) as catename from categories where subcate1 is not null;"
+        query += "select substr(link2, 18) as catename from categories where subcate2 is not null;"
+        query += "select substr(link3, 18) as catename from categories where subcate3 is not null;"
+        query += "select substr(link4, 18) as catename from categories where subcate4 is not null;"
+        return db.load(query);
+    }, 
 };
