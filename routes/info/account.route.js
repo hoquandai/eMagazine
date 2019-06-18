@@ -64,6 +64,18 @@ router.post('/login', (req, res, next) => {
                 return next(err);
             }
 
+            if(user.permissions === 4) {
+                return res.redirect('/admin/categories');
+            }
+
+            if(user.permissions === 3) {
+                return res.redirect('/editor');
+            }
+
+            if(user.permissions === 2){
+                return res.redirect('/writer/post');
+            }
+
             return res.redirect('/');
         })
     })(req, res, next);

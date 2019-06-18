@@ -4,30 +4,34 @@ var categoryModel = require('../../models/category.model');
 var router = express.Router();
 
 router.get('/', (req, res) => {
-  var page = req.query.page || 1;
-  if (page < 1) page = 1;
-  var limit = 8;
-  var offset = (page - 1) * limit;
+  if (res.locals.authUser.permissions === 4) {
+    var page = req.query.page || 1;
+    if (page < 1) page = 1;
+    var limit = 8;
+    var offset = (page - 1) * limit;
 
-  Promise.all([
-    categoryModel.pageByCate(limit, offset),
-    categoryModel.countByCate(),
-  ]).then(([rows, count]) => {
-    var total = count[0].total;
-    var nPages = Math.floor(total / limit);
-    if (total % limit > 0) nPages++; 
-    var pages = []
-    for (i = 1; i <= nPages; i++) {
-      var obj = { value: i, active: i === +page };
-      pages.push(obj);
-    }
+    Promise.all([
+      categoryModel.pageByCate(limit, offset),
+      categoryModel.countByCate(),
+    ]).then(([rows, count]) => {
+      var total = count[0].total;
+      var nPages = Math.floor(total / limit);
+      if (total % limit > 0) nPages++;
+      var pages = []
+      for (i = 1; i <= nPages; i++) {
+        var obj = { value: i, active: i === +page };
+        pages.push(obj);
+      }
 
-    res.render('admin/vwCategories/categories', { categories: rows, pages: pages, layout: false })
-  })
-    .catch(err => {
-      console.log(err);
-      res.end('error occured');
+      res.render('admin/vwCategories/categories', { categories: rows, pages: pages, layout: false })
     })
+      .catch(err => {
+        console.log(err);
+        res.end('error occured');
+      })
+  } else {
+    res.end('Ban khong co quyen truy cap!');
+  }
 })
 
 router.get('/edit/:id', (req, res) => {
