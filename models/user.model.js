@@ -41,6 +41,18 @@ module.exports = {
         return db.load(`update Users set HSD = '${date}' where id_User = '${id}';`)
     },
 
+    updatePermissions: (id, date) => {
+        return db.load(`update Users set permissions = 1, HSD = '${date}' where id_User = '${id}'`)
+    },
+
+    updatePer: id => {
+        return db.load(`update Users set permissions = 0 where id_User = '${id}'`)
+    },
+
+    updatePassword: entity => {
+        return db.load(`update Users set password = '${entity.password}' where id_User = '${entity.id_User}'`)
+    },
+
     updateEditor: (id, entity) => {
         return db.load(`update Users set username = '${entity.username}', email = '${entity.email}', category = '${entity.category}' where id_User = '${id}';`)
     },

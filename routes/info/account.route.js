@@ -95,6 +95,38 @@ router.post('/changeprofile', (req, res, next) => {
     })
 })
 
+router.get('/changepassword', (req, res, next) => {
+    res.render('info/changePassword', { layout: false });
+})
+
+router.post('/changepassword', (req, res, next) => {
+    userModel.signle(res.locals.authUser.id_User)
+        .then(value => {
+            var ret = bcrypt.compareSync(req.body.password, value[0].password);
+            if (ret) {
+                var saltRounds = 10;
+                var hash = bcrypt.hashSync(req.body.newpassword, saltRounds);
+
+                var entity = {
+                    id_User: req.user.id_User,
+                    password: hash
+                }
+
+                userModel.updatePassword(entity).then(n => {
+                    res.redirect('/');
+                }).catch(err => {
+                    res.end('error occured.')
+                });
+            }
+            else {
+                return res.render('info/changepassword', {
+                    layout: false,
+                    err_message: true
+                })
+            }
+        }).catch(next);
+})
+
 router.post('/logout', auth, (req, res, next) => {
     req.logOut();
     res.redirect('/account/login');
