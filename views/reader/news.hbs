@@ -46,7 +46,8 @@
 					<div id="{{names}}" class="tab-pane fade in active post">
 						<!-- row -->
 						<div class="row post">
-							{{#each posts}}
+							{{#if isAuthenticated}}
+							{{#each this.posts}}
 							<!-- Column 1 -->
 								<div class="col-md-3 col-sm-6">
 								<!-- ARTICLE -->
@@ -56,7 +57,7 @@
 											<img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
 										</a>
 										<ul class="article-info">
-											<li class="article-type"><i class="fa fa-camera"></i></li>
+											<li class="article-type">{{#if premium}}<i class="fa fa-star">{{else}}<i class="fa fa-sticky-note-o">{{/if}}</i></li>
 										</ul>
 									</div>
 									<div class="article-body">
@@ -71,7 +72,36 @@
 							</div>
 							<!-- /Column 1 -->
 							{{/each}}
-							<!-- /row -->
+							{{else}}
+							{{#each this.posts}}
+							{{#if premium}}
+							{{else}}
+							<!-- Column 1 -->
+								<div class="col-md-3 col-sm-6">
+								<!-- ARTICLE -->
+								<article class="article">
+									<div class="article-img">
+										<a href="/post/{{postid}}">
+											<img src="/img/{{category}}/{{postid}}/{{postid}}-small.jpg" alt="">
+										</a>
+										<ul class="article-info">
+											<li class="article-type"><i class="fa fa-sticky-note-o"></i></li>
+										</ul>
+									</div>
+									<div class="article-body">
+										<h4 class="article-title"><a href="/post/{{postid}}">{{{title}}}</a></h4>
+										<ul class="article-meta">
+											<li><i class="fa fa-clock-o"></i> {{format date}} </li>
+											<li><i class="fa fa-comments"></i> {{comments}}</li>
+										</ul>
+									</div>
+								</article>
+								<!-- /ARTICLE -->
+							</div>
+							{{/if}}
+							<!-- /Column 1 -->
+							{{/each}}
+							{{/if}}
 						</div>
 					</div>
 					{{/each}}
@@ -82,6 +112,33 @@
 			<!-- /Main Column -->
 		</div>
 		<!-- /ROW -->
+		<div class="row">
+			<div class="col-sm-12">
+				<nav aria-label="...">
+					<ul class="pagination">
+						<li class="page-item disabled">
+							<a class="page-link" href="#" tabindex="-1">Previous</a>
+						</li>
+						{{#each this.pages}}
+						{{#if active}}
+						<li class="page-item active">
+							<a class="page-link" href="javascript:;">{{value}} <span class="sr-only">(current)</span></a>
+						</li>
+						{{else}}
+						<li class="page-item"><a class="page-link" href="?page={{value}}">{{value}}</a></li>
+						{{/if}}
+						
+						{{/each}}
+						{{!--<li class="page-item active">
+							<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+						</li>--}}
+						<li class="page-item">
+							<a class="page-link" href="#">Next</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
 	</div>
 	<!-- /CONTAINER -->
 </div>

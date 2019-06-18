@@ -56,24 +56,27 @@ module.exports = {
 
     loadForHome: () => {
         // top 3 posts by views
-        var query = 'select * from posts order by views desc limit 3;'
+        var query = 'select * from posts where premium != 1 order by views desc limit 3;'
         
         // top 10 posts by views each cate
-        query += `select * from posts order by views desc limit 12;`;
+        query += `select * from posts where premium != 1 order by views desc limit 12;`;
        
         // top 10 posts by date each cate
-        query += `select * from posts order by date desc limit 12;`;
+        query += `select * from posts where premium != 1 order by date desc limit 12;`;
+
+        // top 10 posts premium for subscriber
+        query += `select * from posts where premium = 1 limit 12;`;
 
         return db.load(query);
     },
 
     getPostsByTag: tag => {
-        var query = `SELECT * FROM posts WHERE MATCH(tag1, tag2, tag3) AGAINST (N'${tag}')`;
+        var query = `SELECT * FROM posts WHERE MATCH(tag1, tag2, tag3) AGAINST (N'${tag}') order by premium desc`;
         return db.load(query);
     },
 
     getPostsBySearchString: search => {
-        var query = `SELECT * FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}');`
+        var query = `SELECT * FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}') order by premium desc;`
         return db.load(query);
     },
 
@@ -88,7 +91,7 @@ module.exports = {
     },
 
     pageByCate: (cate, limit, offset) => {
-        var query = `select * from posts where category = N'${cate}' limit ${limit} offset ${offset};`
+        var query = `select * from posts where category = N'${cate}' order by premium desc limit ${limit} offset ${offset};`
         return db.load(query);
     },
 
@@ -145,5 +148,10 @@ module.exports = {
     getPremiumTag: tag => {
         var query = `SELECT * FROM posts WHERE MATCH(tag1, tag2, tag3) AGAINST (N'${tag}')`;
         return db.load(query);
-    }
+    },
+
+    countPostsBySearchString: (search) => {
+        var query = `SELECT count(*) as total FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}');`
+        return db.load(query);
+    },
 };

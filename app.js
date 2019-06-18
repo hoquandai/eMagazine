@@ -49,7 +49,8 @@ app.get('/', (req, res, next) => {
             var top3 = {};
             var view10 = {};
             var new10 = {};
-
+            var premium = {};
+            
             top3['name'] = 'top3';
             top3['posts'] = rows[0];
 
@@ -59,10 +60,13 @@ app.get('/', (req, res, next) => {
             new10['name'] = 'date10';
             new10['posts'] = rows[2];
 
+            premium["name"] = 'premium';
+            premium["posts"] = rows[3];
+
             entity['top3'] = top3;
             entity['view10'] = view10;
             entity['new10'] = new10;
-
+            entity['premium'] = premium;
             //console.log(entity['top3'].posts);
             res.render('home', entity);
         }).catch(next)

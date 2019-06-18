@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-/*
+
 var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
@@ -10,7 +10,7 @@ var createConnection = () => {
         database: 'emagazine',
         multipleStatements: true
     });
-}*/
+}
 
 /*var createConnection = () => {
      return mysql.createConnection({
@@ -23,7 +23,7 @@ var createConnection = () => {
      });
 }*/
 
-var createConnection = () => {
+/*var createConnection = () => {
     return mysql.createConnection({
         host: 'localhost',
         port: 3306,
@@ -32,7 +32,7 @@ var createConnection = () => {
         database: 'emz',
         multipleStatements: true
     });
-}
+}*/
 
 
 module.exports = {
