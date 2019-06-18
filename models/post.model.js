@@ -126,4 +126,24 @@ module.exports = {
         var query = `select count(*) as total from posts;`
         return db.load(query);
     },
+
+    getPremiumByCate: catename => {
+        var query = `select * from posts where category = N'${catename}' order by premium desc;`
+        return db.load(query);
+    },
+
+    getPremiumPosts: () => {
+        var query = `select * from posts order by premium desc;`
+        return db.load(query);
+    },
+
+    getPremiumSearch: search => {
+        var query = `SELECT * FROM posts WHERE MATCH(title, summary, content) AGAINST (N'${search}') order by premium desc;`
+        return db.load(query);
+    },
+
+    getPremiumTag: tag => {
+        var query = `SELECT * FROM posts WHERE MATCH(tag1, tag2, tag3) AGAINST (N'${tag}')`;
+        return db.load(query);
+    }
 };
